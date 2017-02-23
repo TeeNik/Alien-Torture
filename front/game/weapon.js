@@ -1,14 +1,11 @@
 var bulls = [];
 var fire = function () {
     var fireCheck = false;
-    while (mouse.isDown("LEFT")) {
-        /*if (!fireCheck) {
-            fireCheck = true;
-            var fireRate = setInterval(function () {*/
+    if (mouse.isPress("LEFT")) {
                 var bull = game.newCircleObject({
                     x: oPos.x,
                     y: oPos.y,
-                    radius: 8,
+                    radius: 8, 
                     fillColor: "yellow",
                     strokeColor: "lightblue",
                     strokeWidth: 4,
@@ -18,14 +15,6 @@ var fire = function () {
                     }
                 });
                 bulls.push(bull);
-        setTimeout(1000);
-            }
-        //}
-    }
-    //clearInterval(fireRate); 
-    if (mouse.isUp("LEFT")) {
-        clearInterval(fireRate);
-        fireCheck = false;       
     }
     OOP.forArr(bulls, function (el) {
         if (el.life) {
@@ -36,3 +25,4 @@ var fire = function () {
             }
         }
     });
+}
