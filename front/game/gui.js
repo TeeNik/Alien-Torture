@@ -1,6 +1,6 @@
 var drawHP = function(obj){
 	brush.drawRoundRect({
-        w: 61,
+        w: 62,
         h: 9,
 		x: obj.x + 5,
 		y: obj.y - 8,
@@ -10,7 +10,7 @@ var drawHP = function(obj){
         strokeWidth: 2
 	});
     brush.drawRoundRect({
-        w: 59,
+        w: obj.health*6,
         h: 7,
 		x: obj.x + 7,
 		y: obj.y - 6,

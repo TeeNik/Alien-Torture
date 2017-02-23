@@ -1,12 +1,6 @@
 
 
 var arr = {};
-var createShot = function(){
-    var tmp = game.newRectObject
-}
-
-
-
 
 fire();
 

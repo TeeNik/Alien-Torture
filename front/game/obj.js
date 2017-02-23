@@ -1,3 +1,4 @@
+"use strict";
 var drawName = function () {
 	brush.drawText({
 		x: this.x + 13,
@@ -25,10 +26,10 @@ obj.name = "Player1";
 obj.drawName = drawName;
 obj.setDelay(5);
 
-var health = 10;
+obj.health = 10;
 
 obj.control = function(){
-		let speed = 5;
+		let speed = 7.5;
 		this.dx = this.dy = 0;
         if(key.isDown("A"))
         {
