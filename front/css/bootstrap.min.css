@@ -9,15 +9,15 @@
 
 
 @font-face {
-    font-family: manaspc;
-    src: url(/fonts/joystix.ttf);
+    font-family: pixel;
+    src: url(/fonts/joystix.otf);
 }
 
 
 .mainmenu {
     text-align: center;
     padding-top: 110px;
-    font-family: manaspc;
+    font-family: pixel;
 }
 
 li {
@@ -8120,7 +8120,7 @@ button.close {
 	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
 	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
 	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
-    font-family: manaspc;
+    font-family: pixel;
     margin-top: 100px;
 }
 .panel-login>.panel-heading {

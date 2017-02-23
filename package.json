@@ -1,13 +1,19 @@
 {
-  "name": "front",
+  "name": "sample",
   "version": "1.0.0",
-  "description": "",
-  "main": "checkEnter.js",
+  "description": "Sample",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TeeNik/Alien-Torture"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "homepage": "https://github.com/TeeNik/Alien-Torture#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
 }
