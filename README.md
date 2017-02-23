@@ -1,2 +1,2 @@
-# 2017_1_RWS
-Многопользовательский шутер
+Web Application
+Multiplayer game
