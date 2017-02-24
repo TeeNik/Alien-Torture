@@ -27,27 +27,28 @@ obj.drawName = drawName;
 obj.setDelay(5);
 
 obj.health = 10;
+obj.speed = 5;
 
 obj.control = function(){
-		let speed = 7.5;
+    
 		this.dx = this.dy = 0;
         if(key.isDown("A"))
         {
-            this.dx = -speed;
+            this.dx = -obj.speed;
 			this.setFlip(1,0);
         }
         else if(key.isDown("D"))
         {
-            this.dx = speed;
+            this.dx = obj.speed;
 			this.setFlip(0,0);
         }  
         if(key.isDown("W"))
         {
-            this.dy = -speed;
+            this.dy = -obj.speed;
         }  
         else if(key.isDown("S"))
         {
-            this.dy  = speed;
+            this.dy  = obj.speed;
         }
 		
 		if(!(key.isDown("A") || key.isDown("D") || key.isDown("W") || key.isDown("S")))
@@ -96,6 +97,7 @@ obj.collision = function(){
 obj.do = function(){   
     obj.control();
     obj.drawName();
+    obj.checkSpec();
     obj.move(point(obj.dx,obj.dy));
     obj.collision();
     obj.draw();

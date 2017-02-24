@@ -16,6 +16,8 @@ var createShot = function(){
 }
 
 
+
+
 var fire = function () {
     var fireCheck = false;
     if (mouse.isPress("LEFT")) {
@@ -27,10 +29,7 @@ var fire = function () {
                 i--;
                 setTimeout(rifle, 100);
             }
-        }, 100);
-        
-        
-        
+        }, 100); 
     }
     OOP.forArr(bulls, function (el) {
         if (el.life) {
