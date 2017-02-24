@@ -47,13 +47,13 @@ game.newLoop("l1", function()
     
     drawHP(obj);
 	
-	brush.drawLineAngle({
+	/*brush.drawLineAngle({
 		x: shotPoint.x,
 		y: shotPoint.y,
 		length: 100,
 		angle: shotPoint.getAngle(),
 		strokeColor: "green"
-	});
+	});*/
 	
 });
 

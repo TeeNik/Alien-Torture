@@ -7,6 +7,7 @@ var enemy = game.newEllipsObject({
 });
 
 enemy.health = 10;
+enemy.speed = 2;
 
 setInterval(function(){
     var bull = game.newCircleObject({
@@ -27,7 +28,7 @@ setInterval(function(){
 
 var drawEnemy = function(){
     if(enemy.health > 0){
-        enemy.move(point(0.1,0));
+        enemy.move(point(enemy.speed,0));
         enemy.draw();  
         drawHP(enemy);
         if(enemy.health <= 0) {

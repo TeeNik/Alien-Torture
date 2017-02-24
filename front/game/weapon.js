@@ -15,13 +15,28 @@ var createShot = function(){
     bulls.push(bull);
 }
 
+obj.weapon = game.newImageObject({
+      file : "assets/pistol.png",  
+      x: obj.getPositionC().x,
+      y: obj.getPositionC().y, 
+      scale: 0.3,
+});
 
 
+var pistolShot = function(){
+    
+};
+
+
+obj.moveWeapon = function(){
+    obj.weapon.x = oPos.x - 50;
+    obj.weapon.y = oPos.y;
+}
 
 var fire = function () {
     var fireCheck = false;
     if (mouse.isPress("LEFT")) {
-        var  i = 3;
+        let  i = 3;
         setTimeout(function rifle(){
             if(i > 0){
                 

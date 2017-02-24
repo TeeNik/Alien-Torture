@@ -9,10 +9,10 @@ var drawName = function () {
 	});
 };
 
-var img = pjs.tiles.newImage("assets/p1.png");
-var anim = img.getAnimation(0,0,72,97,11);
-var img = pjs.tiles.newImage("assets/p1f.png");
-var animS = img.getAnimation(0,0,72,97,1);
+var img = pjs.tiles.newImage("assets/p2.png");
+var anim = img.getAnimation(0,0,70,94,11);
+var img = pjs.tiles.newImage("assets/p2f.png");
+var animS = img.getAnimation(0,0,70,94,1);//72 97
 
 var obj = game.newAnimationObject({
 	x: 0,
@@ -27,7 +27,7 @@ obj.drawName = drawName;
 obj.setDelay(5);
 
 obj.health = 10;
-obj.speed = 5;
+obj.speed = 7;
 
 obj.control = function(){
     
@@ -63,10 +63,12 @@ obj.control = function(){
         if(mouse.getPosition().x - this.getPositionC().x >= 0)
         {
 			this.setFlip(0,0);
+            this.weapon.setFlip(0,0);
         }
 		else
 		{
 			this.setFlip(1,0);
+            this.weapon.setFlip(1,0);
 		}
 	
 		
@@ -98,7 +100,14 @@ obj.do = function(){
     obj.control();
     obj.drawName();
     obj.checkSpec();
+    
+    if(obj.teleportSet){
+        telep.draw();
+    }
+    
     obj.move(point(obj.dx,obj.dy));
     obj.collision();
     obj.draw();
+    obj.moveWeapon();
+    obj.weapon.draw();
 }
