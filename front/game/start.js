@@ -1,4 +1,4 @@
-var pjs = new PointJS('2d',600,600,{backgroundColor: '#DDDDDD'});
+var pjs = new PointJS('2d',600,600,{backgroundColor: "#DDDDDD"});
 pjs.system.initFullPage();
 var game = pjs.game;   
 var mouse = pjs.mouseControl;

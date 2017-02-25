@@ -6,9 +6,12 @@
     <title>Let's rage!!!</title>
     <link rel="stylesheet" href="css/bootstrap.min.css"> </head>
     <script src="server.js"></script> 
+    <script type="text/javascript" src="jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="checkEnter.js"></script>
+    
 <body>
-    <div class="container">
-        <div class="mainmenu">
+    <div id = "ind" class="container">
+        <div id = "menu" class="mainmenu">
             <h1>Game Title</h1>
             <br>
             <br> 
@@ -18,11 +21,100 @@
             <br> 
             <br>
             <p class="title"><a class="ref" href="game/index.html">Start</a></p>
-            <p class="title"><a class="ref" href="rating.html">Rating</a></p>
-            <p class="title"><a class="ref" href="about.html">About</a></p>
-            <p class="title"><a class="ref" href="login.html">Exit</a></p>
+            <p class="title" onclick="showRating();">Rating</p>
+            <p class="title" onclick="showAbout();">About</p>
+            <p class="title" onclick="showLogin();">Exit</p>
         </div>
     </div>
+    
+    <div id = "rating" class="container">
+        <div id = "rating" class="mainmenu">
+            <h1 style="font-size: 100px">Rating</h1>
+            <br>
+            <br>
+            <br>
+            <br>
+            <ol>
+                <li>DronVachevsky</li>
+                <li>TeeNik</li>
+                <li>Random3355</li>
+                <li>Madonna</li>
+                <li>AMarev</li>
+                <li>ShinyLust</li>
+                <li>Dinosor</li>
+                <li>VladislavPG</li>
+                <li>Gigson</li>
+                <li>Fahrenheit</li>
+            </ol>
+            <br>
+            <p class="title" onclick="showInd();">Back</p>
+        </div>
+    </div>
+    
+    <div id="login" class="container">
+        <div class="mainmenu">
+            <h1>Game Title</h1> </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-login">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-6"> <a href="#" class="active" id="login-form-link">Login</a> </div>
+                            <div class="col-xs-6"> <a href="#" id="register-form-link">Register</a> </div>
+                        </div>
+                        <hr> </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form id="login-form" action="index.html" role="form" style="display: block;" onsubmit="validate(this)">
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value=""> </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password"> </div>
+                                    <div class="form-group text-center">
+                                        <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                        <label for="remember"> Remember Me</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In"> </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="text-center"> <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form id="register-form" role="form" style="display: none;" onsubmit="validate(this)">
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value=""> </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value=""> </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password"> </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password2" id="password2" tabindex="2" class="form-control" placeholder="Confirm Password"> </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now"> </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="manage.js"></script>
+
 </body>
 
 </html>

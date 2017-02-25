@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<script> 
+function res(){ 
+var sum = Number(document.calc.f1.value); 
+var proc = Number(document.calc.f2.value)/1200; 
+var m = Number(document.calc.f3.value); 
+var y = sum*(proc+(proc/(Math.pow((1+proc),m)-1))); 
+document.calc.ans.value = y.toFixed(2); 
+} 
+</script> 
+</head> 
+
+<body> 
+
+<form name="calc"> 
+Сумма кредита: <input type="number" id = "f1"> 
+<br> 
+Процентная ставка: <input type="number" id = "f2"> 
+<br> 
+Срок погашения в месяцах: <input type="number" id = "f3"> 
+<br> 
+<br> 
+<input type="button" value = "Рассчитать примерный ежемесячный платёж" onClick="res();" > 
+<br> 
+<input type="text" id="ans"> 
+</form> 
+
+
+</body> 
+
+</html>

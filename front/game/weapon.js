@@ -1,6 +1,8 @@
 var bulls = [];
 
-var createShot = function(){
+obj.fireCheck = true;
+
+var createShot = function(fileName = "assets/smviolet.png", sp = 10){
     var bull = game.newImageObject( { 
       file : "assets/smviolet.png", 
       x: oPos.x,
@@ -12,6 +14,7 @@ var createShot = function(){
          life: 1
       }
     });
+    bull.speed = sp;
     bulls.push(bull);
 }
 
@@ -19,12 +22,45 @@ obj.weapon = game.newImageObject({
       file : "assets/pistol.png",  
       x: obj.getPositionC().x,
       y: obj.getPositionC().y, 
-      scale: 0.3,
+      scale: 0.35,
 });
 
 
 var pistolShot = function(){
-    
+    if(obj.fireCheck){
+        obj.fireCheck = false;
+        createShot();
+        setTimeout(function(){
+           obj.fireCheck = true; 
+        }, 500);
+    }
+};
+
+var assaultShot = function(){
+    if(obj.fireCheck){
+        obj.fireCheck = false;
+        let  i = 3;
+        setTimeout(function rifle(){
+            if(i > 0){         
+                createShot();
+                i--;
+                setTimeout(rifle, 100);
+            }
+        }, 100); 
+        setTimeout(function(){
+           obj.fireCheck = true; 
+        }, 500);
+    }
+};
+
+var sniperShot = function(){
+    if(obj.fireCheck){
+        obj.fireCheck = false;
+        createShot();
+        setTimeout(function(){
+           obj.fireCheck = true; 
+        }, 500);
+    }
 };
 
 
@@ -34,22 +70,13 @@ obj.moveWeapon = function(){
 }
 
 var fire = function () {
-    var fireCheck = false;
     if (mouse.isPress("LEFT")) {
-        let  i = 3;
-        setTimeout(function rifle(){
-            if(i > 0){
-                
-                createShot();
-                i--;
-                setTimeout(rifle, 100);
-            }
-        }, 100); 
+        assaultShot();
     }
     OOP.forArr(bulls, function (el) {
         if (el.life) {
             el.draw();
-            el.moveAngle(10);
+            el.moveAngle(el.speed);
             if (el.isIntersect(wall)) {
                 el.visible = false;
             }
