@@ -29,6 +29,8 @@ obj.setDelay(5);
 obj.health = 10;
 obj.speed = 7;
 
+obj.wNum = 0;
+
 obj.control = function(){
     
 		this.dx = this.dy = 0;
@@ -50,6 +52,11 @@ obj.control = function(){
         {
             this.dy  = obj.speed;
         }
+    
+        if(key.isPress("P")){
+            obj.weapon = weapon[(++obj.wNum)%numOfWeapon]; 
+        }
+    
 		
 		if(!(key.isDown("A") || key.isDown("D") || key.isDown("W") || key.isDown("S")))
 		{

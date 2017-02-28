@@ -3,24 +3,24 @@ var rage = function () {
     obj.speed = 10;
     ableSpec = false;
     setTimeout(function () {
-        obj.speed = 5;
+        obj.speed = 7;
         ableSpec = true;
     }, 5000);
 }
 var blastRing = function () {
     for (let i = 0; i < 12; i++) {
-                console.log(i);
                 var bull = game.newImageObject({
                     file: "assets/smviolet.png",
                     x: oPos.x,
                     y: oPos.y,
-                    w: 30,
-                    h: 30,
+                    w: 50,
+                    h: 50,
                     angle: i*30,
                     userData: {
-                        life: 1 
+                        life: 1
                     }
                 });
+                bull.speed = 5; 
                 bulls.push(bull);
             }
             ableSpec = false;
@@ -60,9 +60,9 @@ var energyBlast = function(){
                     y: oPos.y,
                     w: 30,
                     h: 30,
-                    angle: i*30,
+                    angle: 0,
                     userData: {
-                        life: 1 
+                        life: 1,
                     }
                 });
     bulls.push(bull);
@@ -71,7 +71,7 @@ var energyBlast = function(){
 obj.checkSpec = function () {
     if (mouse.isPress("RIGHT")) {
         if (ableSpec) {
-            teleport();
+            blastRing(); 
         }
     }
 }
