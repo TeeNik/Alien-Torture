@@ -2,16 +2,18 @@ var bulls = [];
 
 obj.fireCheck = true;
 
-var createShot = function(fileName = "assets/smviolet.png", sp = 10){
+var createShot = function(fileName = "assets/pistolShot.png", sp = 10, dm = 1){
     var bull = game.newImageObject( { 
       file : fileName, 
       x: oPos.x,
       y: oPos.y, 
+      scale: 0.35,
       angle: shotPoint.getAngle(),
       userData: {
          life: 1
       }
     });
+    bull.damage = dm;
     bull.speed = sp;
     bulls.push(bull);
 }
@@ -49,10 +51,10 @@ var assaultShot = function(){
 var gunShot = function(){
     if(obj.fireCheck){
         obj.fireCheck = false;
-        let  i = 3;
+        let  i = 2;
         setTimeout(function rifle(){
             if(i > 0){         
-                createShot();
+                createShot("assets/gunShot.png", 10, 1.5);
                 i--;
                 setTimeout(rifle, 100);
             }
@@ -66,7 +68,7 @@ var gunShot = function(){
 var sniperShot = function(){
     if(obj.fireCheck){
         obj.fireCheck = false;
-        createShot("assets/soran.png", 20);
+        createShot("assets/soran.png", 20, 1.5);
         setTimeout(function(){
            obj.fireCheck = true; 
         }, 500);
@@ -76,7 +78,7 @@ var sniperShot = function(){
 var plasmaShot = function(){
     if(obj.fireCheck){
         obj.fireCheck = false;
-        createShot("assets/soran.png", 20);
+        createShot("assets/plasmaShot.png", 20, 2);
         setTimeout(function(){
            obj.fireCheck = true; 
         }, 500);
@@ -84,13 +86,13 @@ var plasmaShot = function(){
 };
 
 obj.moveWeapon = function(){
-    obj.weapon.x = oPos.x - 50;
+    obj.weapon.x = oPos.x - 35;
     obj.weapon.y = oPos.y;
 }
 
 var fire = function () {
     if (mouse.isPress("LEFT")) {
-        switch(obj.wNum % 4){
+        switch(obj.wNum % 5){
             case 0: pistolShot();
                 break;
             case 1: assaultShot();
@@ -113,7 +115,7 @@ var fire = function () {
             }
             if(el.isIntersect(enemy) && el.isVisible() && enemy.isVisible()) {
                 el.visible = false;
-                enemy.health--;
+                enemy.health -= el.damage;
             }
         }
     });

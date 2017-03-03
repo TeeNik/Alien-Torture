@@ -26,7 +26,7 @@ obj.name = "Player1";
 obj.drawName = drawName;
 obj.setDelay(5);
 
-obj.health = 10;
+obj.health = 5;
 obj.speed = 7;
 
 obj.wNum = 0;
