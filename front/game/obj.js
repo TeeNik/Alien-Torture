@@ -54,7 +54,7 @@ obj.control = function(){
         }
     
         if(key.isPress("P")){
-            obj.weapon = weapon[(++obj.wNum)%numOfWeapon]; 
+            obj.weapon = weapons[(++obj.wNum)%numOfWeapon]; 
         }
     
 		

@@ -35,9 +35,34 @@ var plasma = game.newImageObject({
       scale: 0.5,
 });
 
-var weapon = [];
-weapon.push(pistol);
-weapon.push(assault);
-weapon.push(sniper);
-weapon.push(gun);
-weapon.push(plasma);
+var weapons = [];
+weapons.push(pistol);
+weapons.push(assault);
+weapons.push(sniper);
+weapons.push(weaponsn);
+weapons.push(plasma);
+
+boxs = [];
+var genBox = function(){
+    var box = game.newImageObject({
+        file: "assets/box.png"
+        x: 450,
+        y: 450,
+        userData{
+            id = pjs.math.toInt(pjs.math.(1,4));
+            life = 1;
+        }
+    });
+    boxs.push(box);
+} 
+
+var drawItems = function(){
+    OOP.forArr(boxs, function (el) {
+        if (el.life) {
+            el.draw();
+            if (el.isIntersect(obj)) {
+                el.visible = false;
+            }
+        }
+    });
+};
