@@ -3,9 +3,9 @@ const login = document.getElementById("login");
 const rating = document.getElementById("rating");
 const about = document.getElementById("about");
 
-rating.hidden = true;
-login.hidden = true;
-about.hidden = true;
+//rating.hidden = true;
+//ind.hidden = true;
+//about.hidden = true;
 
 function showRating(){
     ind.hidden = true;

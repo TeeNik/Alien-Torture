@@ -7,9 +7,22 @@ var specs = [];
 var rage = function () {
     obj.speed = 10;
     ableSpec = false;
+    let an = pjs.tiles.newImage("assets/berserk.png").getAnimation(0,0,350,350,5);
+    let flame = game.newAnimationObject({
+        animation: an,
+        x: oPos.x,
+        y: oPos.y,
+        w: 100,
+        h: 100, 
+        delay: 5
+    });
+    obj.addSpec = flame;
+    obj.addSpec.setPositionC(point(oPos.x,oPos.y)); 
     setTimeout(function () {
         obj.speed = 7;
         ableSpec = true;
+        flame.visible = false;
+        obj.addSpec = null;
     }, 5000);
 }
 

@@ -86,8 +86,13 @@ var plasmaShot = function(){
 };
 
 obj.moveWeapon = function(){
-    obj.weapon.x = oPos.x - 35;
-    obj.weapon.y = oPos.y;
+     obj.weapon.move(point(obj.dx,obj.dy)); 
+    
+    obj.weapon.rotate(mouse.getPosition());
+    
+    if(obj.addSpec){
+        obj.addSpec.move(point(obj.dx,obj.dy));
+    }
 }
 
 var fire = function () {

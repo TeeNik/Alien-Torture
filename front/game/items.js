@@ -2,7 +2,7 @@ var numOfWeapon = 5;
 
 var pistol = game.newImageObject({
       file : "assets/pistol.png",  
-      x: obj.getPositionC().x,
+      x: obj.getPositionC().x-30, 
       y: obj.getPositionC().y, 
       scale: 0.35,
 });

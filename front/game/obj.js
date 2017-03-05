@@ -28,7 +28,7 @@ obj.setDelay(5);
 
 obj.health = 5;
 obj.speed = 7;
-
+obj.addSpec = null;
 obj.wNum = 0;
 
 obj.control = function(){
@@ -60,7 +60,7 @@ obj.control = function(){
 		
 		if(!(key.isDown("A") || key.isDown("D") || key.isDown("W") || key.isDown("S")))
 		{
-			this.setAnimation(animS);		
+			this.drawToFrame(8);		
 		}
 		else
 		{
@@ -75,7 +75,7 @@ obj.control = function(){
 		else
 		{
 			this.setFlip(1,0);
-            this.weapon.setFlip(1,0);
+            this.weapon.setFlip(0,1); 
 		}
 	
 		
@@ -113,8 +113,11 @@ obj.do = function(){
     }
     
     obj.move(point(obj.dx,obj.dy));
-    obj.collision();
-    obj.draw();
     obj.moveWeapon();
+    obj.collision();
+    obj.draw();  
     obj.weapon.draw();
+    if(obj.addSpec){
+        obj.addSpec.draw();
+    }  
 }

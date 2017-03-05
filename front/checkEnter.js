@@ -1,22 +1,28 @@
 function validate(form)
 {  
     var elems = form.elements;
+    let ok = true;
     if(!elems.username.value)
     {
-        alert("user");        
+        ok = false;      
     }
     if(!elems.password.value) 
     {
-        alert("password");
+        ok = false;   
     }
-    if(!elems.email.value)
+    /*if(!elems.email.value)
     {
-        alert("email");        
+        ok = false;           
     }
     if(elems.password.value != elems.password2.value)
     {
-        alert("wrong");                
-    }
+        ok = false;                   
+    }*/
+    
+    //if(ok){
+        showInd();
+        alert(5);
+    //}
 }
 
 
