@@ -3,8 +3,8 @@ const login = document.getElementById("login");
 const rating = document.getElementById("rating");
 const about = document.getElementById("about");
 
-//rating.hidden = true;
-//ind.hidden = true;
+rating.hidden = true;
+ind.hidden = true;
 //about.hidden = true;
 
 function showRating(){

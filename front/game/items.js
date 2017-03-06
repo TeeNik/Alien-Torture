@@ -56,6 +56,8 @@ var genBox = function(){
     boxs.push(box);
 } 
 
+genBox();
+
 var drawItems = function(){
     OOP.forArr(boxs, function (el) {
         if (el.life) {

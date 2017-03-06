@@ -46,6 +46,8 @@ game.newLoop("l1", function()
 	wall.draw();
     
     drawHP(obj);
+    
+    drawItems();
 	
 	/*brush.drawLineAngle({
 		x: shotPoint.x,
