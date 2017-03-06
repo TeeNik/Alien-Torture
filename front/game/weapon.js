@@ -18,7 +18,7 @@ var createShot = function(fileName = "assets/pistolShot.png", sp = 10, dm = 1){
     bulls.push(bull);
 }
 
-obj.weapon = weapon[0];
+obj.weapon = weapons[0];
 
 
 var pistolShot = function(){

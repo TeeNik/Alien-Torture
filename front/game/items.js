@@ -39,18 +39,18 @@ var weapons = [];
 weapons.push(pistol);
 weapons.push(assault);
 weapons.push(sniper);
-weapons.push(weaponsn);
+weapons.push(gun);
 weapons.push(plasma);
 
 boxs = [];
 var genBox = function(){
     var box = game.newImageObject({
-        file: "assets/box.png"
+        file: "assets/box.png",
         x: 450,
         y: 450,
-        userData{
-            id = pjs.math.toInt(pjs.math.(1,4));
-            life = 1;
+        userData: {
+            id: pjs.math.toInt(pjs.math.random(1,4)),
+            life: 1
         }
     });
     boxs.push(box);
