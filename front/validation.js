@@ -51,10 +51,9 @@ $(document).ready(function () {
             focusInvalid: false,
         });
     });
-    $("#login-submit").click(function(){
-	   alert($("input[name=username]").val());
-       /*if($("#login-form").valid()){
-           showInd();
-       } */
-    });
+    /*$("#login-submit").click(function(){
+		if($("#login-form").valid()){
+        	showInd();
+        }
+    });*/
 });

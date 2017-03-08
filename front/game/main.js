@@ -49,16 +49,6 @@ game.newLoop("l1", function()
     
     drawItems();
 	
-	var r = game.newRectObject( { 
-	  x : 100, 
-	  y : 100, 
-	  w : 50, 
-	  h : 50, 
-	  fillColor : "#FBFE6F", 
-	});
-	r.setPositionS(point(10,10));
-	r.draw();
-	
 });
 
 game.startLoop("l1");

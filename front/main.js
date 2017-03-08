@@ -3,6 +3,7 @@
 	let indPage = document.querySelector("#ind");
 	let ratPage = document.querySelector("#rat");
 	let logPage = document.querySelector("#login");
+	let aboutPage = document.querySelector("#about");
 	
     let menu = new Menu({
         el: document.createElement('div'),
@@ -83,10 +84,47 @@
 		}
     });
 	
+	login.on("submit", (event) => {
+		if($("#login-form").valid()){
+        	showInd();
+        }
+	});
+	
+	let about = new About({
+        el: document.createElement('div'),
+		data: {
+			title: "Game title",
+			fields: [
+				{
+					prof: "Frontend",
+					name: "Kuchaeva Karina"
+				},
+				{
+					prof: "Backend",
+					name: "Zlobina Svetlana"
+				},
+				{
+					prof: "Teambuilding",
+					name: "Bayramukov Yan"
+				},
+				{
+					prof: "Producer",
+					name: "Maschkin Egor"
+				},
+				{
+					prof: "Designer",
+					name: "Ovchinnikov Maksim"
+				}
+			]
+		}
+    });
+	
 	indPage.appendChild(menu.el);
 	ratPage.appendChild(rating.el); 
 	logPage.appendChild(login.el); 
+	aboutPage.appendChild(about.el);
 	
 	ratPage.hidden = true;
 	logPage.hidden = true;
+	aboutPage.hidden = true;
 })();

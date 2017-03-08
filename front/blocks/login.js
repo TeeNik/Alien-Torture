@@ -86,6 +86,10 @@
     </div>
 			`;
 		}
+		
+		on(type, callback){
+			this.el.addEventListener(type, callback);	
+		}
     }
  	window.Login = Login;
 })();

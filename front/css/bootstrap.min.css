@@ -38,6 +38,7 @@ h1 {
     font-size: 100px;
 }
 
+
 .ref {
     text-decoration: none;
     color: #333;
@@ -1676,11 +1677,6 @@ h5 small,
 h6 .small,
 h6 small {
     font-size: 75%
-}
-
-.h2,
-h2 {
-    font-size: 30px
 }
 
 .h3,
@@ -8361,4 +8357,12 @@ ul {
 sup, .small {
   font-size: 0.6125em;
 }
-/*# sourceMappingURL=bootstrap.min.css.map */
+
+h2 {
+	font-size: 30px;
+	margin-bottom: 0px;
+}
+
+h3 {
+	font-size: 20px;
+}
