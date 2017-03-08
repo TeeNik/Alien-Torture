@@ -28,3 +28,8 @@ function showInd(){
     login.hidden = true;
     about.hidden = true;
 }
+
+function startGame()
+{
+	location.href = "game/index.html";
+}

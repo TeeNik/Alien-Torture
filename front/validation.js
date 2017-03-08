@@ -52,8 +52,9 @@ $(document).ready(function () {
         });
     });
     $("#login-submit").click(function(){
-       if($("#login-form").valid()){
+	   alert($("input[name=username]").val());
+       /*if($("#login-form").valid()){
            showInd();
-       } 
+       } */
     });
 });

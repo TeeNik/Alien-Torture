@@ -11,19 +11,19 @@
 			fields: [
 				{
 					name: "Start",
-					fun: "game/index.html",
+					fun: "startGame()",
 				},
 				{
 					name: "Rating",
-					fun: "showRating();",
+					fun: "showRating()",
 				},
 				{
 					name: "About",
-					fun: "showAbout();",
+					fun: "showAbout()",
 				},
 				{
 					name: "Exit",
-					fun: "showLogin();",
+					fun: "showLogin()",
 				},
 			]
 		}
