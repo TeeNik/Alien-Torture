@@ -38,14 +38,13 @@ $(document).ready(function () {
                     required: true,
                     email: true
                 },
-                password: {
+                password1: {
                     required: true,
                     minlength: 6
                 },
                 password2: {
                     required: true,
-                    minlength: 6,
-                    equalTo: "#password"
+                    equalTo: "#password1"
                 }
             },
             focusCleanup: true,

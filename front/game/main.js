@@ -49,13 +49,15 @@ game.newLoop("l1", function()
     
     drawItems();
 	
-	/*brush.drawLineAngle({
-		x: shotPoint.x,
-		y: shotPoint.y,
-		length: 100,
-		angle: shotPoint.getAngle(),
-		strokeColor: "green"
-	});*/
+	var r = game.newRectObject( { 
+	  x : 100, 
+	  y : 100, 
+	  w : 50, 
+	  h : 50, 
+	  fillColor : "#FBFE6F", 
+	});
+	r.setPositionS(point(10,10));
+	r.draw();
 	
 });
 

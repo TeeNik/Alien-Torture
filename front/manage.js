@@ -1,10 +1,10 @@
 const ind = document.getElementById("ind");
 const login = document.getElementById("login");
-const rating = document.getElementById("rating");
+const rating = document.getElementById("rat");
 const about = document.getElementById("about");
 
-rating.hidden = true;
-ind.hidden = true;
+//rating.hidden = true;
+//login.hidden = true;
 //about.hidden = true;
 
 function showRating(){
