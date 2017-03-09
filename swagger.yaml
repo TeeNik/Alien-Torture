@@ -1,0 +1,194 @@
+swagger: '2.0'
+info:
+  title: RWS
+  description: |
+    Многопользовательская игра
+  version: "1.0.0"
+host: rws-backend.herokuapp.com
+schemes:
+- https
+basePath: /api
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /signup:
+    post:
+      summary: Создание нового пользователя
+      description: |
+        Создание нового пользователя в базе данных
+      operationId: userCreate
+      parameters:
+      - name: profile
+        in: body
+        description: Данные пользовательского профиля
+        required: true
+        schema:
+          $ref: '#/definitions/User'
+      responses:
+        200:
+          description: |
+            Пользователь успешно создан
+            Возвращает данные созданного пользователя
+          schema:
+            $ref: '#/definitions/UserInfo'
+        400:
+          description: Некорректный запрос
+          schema:
+            $ref: '#/definitions/Error'
+  /user/{login}:
+    get:
+      summary: Получение информации о пользователе
+      description: |
+        Получение информации о пользователе форума по его имени
+      consumes: []
+      operationId: userGetOne
+      parameters:
+      - name: login
+        in: path
+        description: Имя пользователя
+        required: true
+        type: string
+      responses:
+        200:
+          description: Информация о пользователе
+          schema:
+            $ref: '#/definitions/UserInfo'
+        403:
+          description: Пользователь не авторизован
+          schema:
+            $ref: '#/definitions/Error'
+        404:
+          description: Пользователь отсутсвует в системе
+          schema:
+            $ref: '#/definitions/Error'
+        
+    post:
+      summary: Изменение данных  пользователя
+      description: Изменение информации в профиле пользователя
+      operationId: userUpdate
+      parameters:
+      - name: login
+        in: path
+        description: Имя пользователя.
+        required: true
+        type: string
+      - name: profile
+        in: body
+        description: Изменения профиля пользователя
+        required: true
+        schema:
+          $ref: '#/definitions/UserInfo'
+      responses:
+        200:
+          description: Информация о пользователе
+          schema:
+            $ref: '#/definitions/UserInfo'
+        403:
+          description: Пользователь не авторизован
+          schema:
+            $ref: '#/definitions/Error'
+  /session:
+    get:
+      description: Информация о пользователе текущей сессии
+      responses:
+        200:
+          description: |
+            Возвращает данные пользователя
+          schema:
+            $ref: '#/definitions/UserInfo'
+        400:
+          description: Некорректный запрос
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      description: Авторизация пользователя
+      operationId: login
+      parameters:
+      - name: userData
+        in: body
+        description: Данные пользователя
+        required: true
+        schema:
+          $ref: '#/definitions/UserAuth'
+      responses:
+        200:
+          description: |
+            Пользователь успешно авторизован
+            Возвращает данные пользователя
+          schema:
+            $ref: '#/definitions/UserInfo'
+        400:
+          description: Некорректный запрос
+          schema:
+            $ref: '#/definitions/Error'
+    delete:
+      description: Выход пользователя
+      operationId: logout
+      responses:
+        200:
+          description: |
+            Пользователь успешно вышел
+        400:
+          description: Некорректный запрос
+          schema:
+            $ref: '#/definitions/Error'
+          
+definitions:
+  User:
+    description: Информация о пользователе
+    type: object
+    properties:
+      login:
+        type: string
+        description: Имя пользователя (уникальное поле)
+      email:
+        type: string
+        format: email
+        description: Почтовый адрес пользователя (уникальное поле)
+        example: captain@black.su
+        x-isnullable: false
+      password:
+        type: string
+        format: text
+        description: Пароль
+    required:
+    - login
+    - password
+    - email
+  UserInfo:
+    description: Информация о пользователе
+    type: object
+    properties:
+      login:
+        type: string
+        description: Имя пользователя
+      score:
+        type: number
+        format: int64
+        description: Очки пользователя
+    required:
+    - login
+    - score
+  UserAuth:
+    description: Данные пользователя для авторизации
+    type: object
+    properties:
+      login:
+        type: string
+        description: Имя пользователя (уникальное поле)
+      password:
+        type: string
+        format: text
+        description: Пароль
+    required:
+    - login
+    - password
+  Error:
+    description: Ошибка
+    type: object
+    properties:
+      error:
+        type: string
+        
