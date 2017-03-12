@@ -38,58 +38,45 @@
         _updateHtml() {
             this.el.innerHTML = `
 				<div class="mainmenu">
-            		<h1>${this.data.title}</h1>
-				</div>
-        		<div class="row">
-            	<div class="col-md-6 col-md-offset-3">
-                <div class="panel panel-login">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-6"> <a href="#" class="active" id="login-form-link">Login</a> </div>
-                            <div class="col-xs-6"> <a href="#" id="register-form-link">Register</a> </div>
-                        </div>
-                        <hr> </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <form id="login-form" role="form" style="display: block;">
-                                    ${this._getLogFields()} 
-                                    <div class="form-group text-center">
-                                        <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-                                        <label for="remember"> Remember Me</label>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="row">
-                                            <div class="col-sm-6 col-sm-offset-3">
-                                                <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In"> </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="text-center"> <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a> </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                                <form  id="register-form" role="form" style="display: none;" onsubmit="">
-                                    ${this._getRegFields()} 
-                                    <div class="form-group">
-                                        <div class="row">
-                                            <div class="col-sm-6 col-sm-offset-3">
-                                                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now"> </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="mainmenu" style="padding-top: 0px">
-          <p class="title" onclick="showInd();">Back</p>
+		<h1>Game Title</h1> </div>
+	<div class="mainmenu">
+		<a class="hiddenanchor" id="toregister"></a>
+		<a class="hiddenanchor" id="tologin"></a>
+		<div id="wrapper">
+			<div id="login" class="animate form">
+				<form action="mysuperscript.php" autocomplete="on">
+					<h4><a href="#tologin" class="to_register" >Log In </a><a href="#toregister" class="to_register" style="text-align: right">Sign Up</a></h4>
+					<p>
+						<input id="username" name="username" required="required" type="text" placeholder="Username" /> </p>
+					<p>
+						<input id="password" name="password" required="required" type="password" placeholder="Password" /> </p>
+					<p class="keeplogin">
+						<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
+						<label for="loginkeeping">Keep me logged in</label>
+					</p>
+					<p class="login button">
+						<input type="submit" value="Login" /> </p>
+				</form>
+			</div>
+			<div id="register" class="animate form">
+				<form action="mysuperscript.php" autocomplete="on">
+					<h4><a href="#tologin" class="to_register">Log In </a><a href="#toregister" class="to_register" style="text-align: right">Sign Up</a></h4>
+					<p>
+						<input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="Username" /> </p>
+					<p>
+						<input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="Email" /> </p>
+					<p>
+						<input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="Password" /> </p>
+					<p>
+						<input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="Repeat password" /> </p>
+					<p class="signin button">
+						<input type="submit" value="Sign up" /> </p>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="mainmenu" style="padding-top: 0px">
+		<p class="title" onclick="showInd();">Back</p>
 	</div>
 			`;
         }

@@ -1,4 +1,5 @@
 (function () {
+
     class Menu {
         constructor(options = {data: {}}) {
             this.data = options.data;
@@ -11,14 +12,15 @@
             this._updateHtml();
         }
 
-        _getFields () {
-            let { fields = [] } = this.data;
+        _getFields() {
+            let {fields = []} = this.data;
 
-            return fields.map(field => { return `<p class="title"  onclick="${field.fun};">${field.name}</p>` }).join(' ');
+            return fields.map(field => {
+                return `<p class="title"  onclick="${field.fun}">${field.name}</p>`
+            }).join(' ');
         }
 
-        _updateHtml()
-        {
+        _updateHtml() {
             this.el.innerHTML = `
 				<div id="menu" class="mainmenu">
                     <h1>${this.data.title || 'default'}</h1>					

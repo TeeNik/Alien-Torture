@@ -8,102 +8,7 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
 
-@font-face {
-    font-family: pixel;
-    src: url(/fonts/joystix.otf);
-}
 
-
-.mainmenu {
-    text-align: center;
-    padding-top: 110px;
-    font-family: pixel;
-}
-
-li {
-    font-size: 30px;
-}
-
-body {
-    background-color: #01FF70;
-    margin: 0;
-}
-
-h1 {
-    cursor: default;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border: solid;
-    border-color: #333;
-    font-size: 100px;
-}
-
-
-.ref {
-    text-decoration: none;
-    color: #333;
-    cursor: default;
-}
-
-.ref:hover {
-    text-decoration: none;
-    color: #333;
-    
-}
-
-.ref:visited {
-    color: #333;
-    text-decoration: none;
-}
-
-.left {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 50%;
-    background-color: #2A7689;
-    bottom: 0px;
-}
-
-.right {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 50%;
-    background-color:  rebeccapurple;
-    bottom: 0px; 
-}
-
-.img1 {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 256px;
-    height: 256px;
-}
-
-.title {
-    margin: 0 auto;
-    padding: 10px;
-    max-width: 500px;
-    font-size: 50px;
-    transition: 0.2s linear;
-    cursor: default;
-}
-
-.title:hover {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-}
-
-html {
-    font-family: sans-serif;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%
-}
 
 article,
 aside,
@@ -8358,11 +8263,4 @@ sup, .small {
   font-size: 0.6125em;
 }
 
-h2 {
-	font-size: 30px;
-	margin-bottom: 0px;
-}
 
-h3 {
-	font-size: 20px;
-}

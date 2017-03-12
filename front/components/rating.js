@@ -12,7 +12,7 @@
 		}
     
         _updateHtml () {
-			//noinspection ProblematicWhitespace
+            console.log(playerNames);
             this.el.innerHTML = `
 				<div id="rating" class="mainmenu">
 					<h1 style="font-size: 100px">Rating</h1>
@@ -20,7 +20,7 @@
 					<br>
 					<br>
 					<br>`
-					+ temp() + 
+					+ temp(playerNames) +
 					`<br>
 					<p class="title" onclick="showInd();">Back</p>
 				</div>

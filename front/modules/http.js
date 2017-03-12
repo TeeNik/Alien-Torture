@@ -24,7 +24,24 @@
 
             xhr.withCredentials = true;
             let url = '${this._baseURL}${address}';
-            xhr.open('GET', url, true);
+            xhr.open('GET', address, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState !== 4) {
+                    return;
+                }
+                if (typeof callback === 'function') {
+                    callback(xhr);
+                }
+            }
+            xhr.send(null);
+        }
+
+        delete(address, callback = null) {
+            const xhr = new XMLHttpRequest();
+
+            xhr.withCredentials = true;
+            let url = '${this._baseURL}${address}';
+            xhr.open('DELETE', address, true);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState !== 4) {
                     return;

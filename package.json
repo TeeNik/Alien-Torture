@@ -1,21 +1,20 @@
 {
-  "name": "sample",
+  "name": "rws",
   "version": "1.0.0",
-  "description": "Sample",
+  "description": "* Байрамуков Ян\r    * Злобина Светлана\r    * Кучаева Карина",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js", 
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TeeNik/Alien-Torture"
+    "url": "git+https://github.com/TeeNik/2017_1_RWS.git"
   },
-  "keywords": [],
   "author": "",
-  "homepage": "https://github.com/TeeNik/Alien-Torture#readme",
-  "dependencies": {
-    "express": "^4.14.1",
-	"pug": "^2.0.0-beta11",
-    "pug-cli": "^1.0.0-alpha6"
-  }
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TeeNik/2017_1_RWS/issues"
+  },
+  "homepage": "https://github.com/TeeNik/2017_1_RWS#readme"
 }

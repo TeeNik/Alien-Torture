@@ -55,29 +55,4 @@ $(document).ready(function () {
             focusInvalid: false,
         });
     });
-   /* $("#login-submit").click(function (e) {
-        if ($("#login-form").valid()) {
-            e.preventDefault();
-            //console.log($("input[name=username]").val());
-            //console.log($("input[name=password]").val());
-            const SiteService = window.SiteService;
-            const siteService = new SiteService();
-            siteService.login($("input[name=username]").val(), $("input[name=password]").val());
-            showInd();
-        }
-    });
-    $("#register-submit").click(function (e) {
-        if ($("#register-form").valid())
-            e.preventDefault();
-        console.log('on click');
-        const SiteService = window.SiteService;
-        const siteService = new SiteService();
-        console.log($("input[name=username_reg]").val());
-        console.log($("input[name=password1]").val());
-        siteService.register($("input[name=username_reg]").val(), $("input[name=email]").val(), $("input[name=password1]").val());
-        const siteService = new siteService();
-         siteService.register($("#register-form").login, $("#register-form").email, $("#register-form").password);
-
-        showInd();
-    });*/
 });

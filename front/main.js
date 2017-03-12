@@ -2,15 +2,15 @@
 
     let indPage = document.querySelector("#ind");
     let ratPage = document.querySelector("#rat");
-    let logPage = document.querySelector("#login");
+    let logPage = document.querySelector("#log");
     let aboutPage = document.querySelector("#about");
+    let gamePage = document.querySelector("#game");
 
     const SiteService = window.SiteService;
     const siteService = new SiteService();
 
     const HTTP = window.HTTP;
     const http = new HTTP();
-    //http.BaseURL = 'http://Rws-backend.herokuapp.com/api';
 
     let menu = new Menu({
         el: document.createElement('div'),
@@ -19,7 +19,7 @@
             fields: [
                 {
                     name: "Start",
-                    fun: "showLogin()",
+                    fun: "auth()",
                 },
                 {
                     name: "Rating",
@@ -30,8 +30,8 @@
                     fun: "showAbout()",
                 },
                 {
-                    name: "Exit",
-                    fun: "showLogin()",
+                    name: "Logout",
+                    fun: "userLogout()",
                 },
             ]
         }
@@ -41,6 +41,13 @@
         el: document.createElement('div'),
         data: {
             title: "Rating",
+        }
+    });
+
+    let game = new Game({
+        el: document.createElement('div'),
+        data: {
+            title: "Game",
         }
     });
 
@@ -90,6 +97,7 @@
             ],
         }
     });
+
     login.on("submit", (event) => {
         if ($("#register-form").valid() && !lg) {
             event.preventDefault();
@@ -143,11 +151,14 @@
 
     indPage.appendChild(menu.el);
     ratPage.appendChild(rating.el);
+    makeRating();
     logPage.appendChild(login.el);
     aboutPage.appendChild(about.el);
+    gamePage.appendChild(game.el);
 
 
     ratPage.hidden = true;
     logPage.hidden = true;
     aboutPage.hidden = true;
+    gamePage.hidden = true;
 })();
