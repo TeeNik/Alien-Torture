@@ -76,11 +76,19 @@ var plasmaShot = function () {
     }
 };
 obj.moveWeapon = function () {
-    obj.weapon.move(point(obj.dx, obj.dy));
-    obj.weapon.rotate(mouse.getPosition());
+    OOP.forArr(weapons, function (el) {
+        el.move(point(obj.dx, obj.dy));
+        el.rotate(mouse.getPosition());
+
+    });
     if (obj.addSpec) {
         obj.addSpec.move(point(obj.dx, obj.dy));
     }
+    /*obj.weapon.move(point(obj.dx, obj.dy));
+    obj.weapon.rotate(mouse.getPosition());
+    if (obj.addSpec) {
+        obj.addSpec.move(point(obj.dx, obj.dy));
+    }*/
 }
 var fire = function () {
     if (mouse.isPress("LEFT")) {

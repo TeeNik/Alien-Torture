@@ -17,6 +17,7 @@ var wall = game.newRectObject({
 });
 
 
+
 game.newLoop("l1", function()
 {
     game.clear();
@@ -27,14 +28,15 @@ game.newLoop("l1", function()
 	shotPoint.setPositionC(obj.getPositionC());
 	shotPoint.rotate(mouse.getPosition());
 	
-	OOP.forXY(100,100,function(x,y){
+	/*OOP.forXY(100,100,function(x,y){
 		brush.drawRect({
 			x: x*50, y: y*50,
 			w: 48, h: 48,
 			fillColor: "gray"
 		});		
-	});
+	});*sd/
 	
+	OOP.drawArr(blocks);
 	
 	fire();
 	
@@ -42,11 +44,13 @@ game.newLoop("l1", function()
 
 	obj.do();
 	
-	wall.draw();
+	//wall.draw();
     
     drawHP(obj);
     
     drawItems();
+	
+	
 	
 });
 

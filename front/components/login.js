@@ -44,7 +44,7 @@
 		<a class="hiddenanchor" id="tologin"></a>
 		<div id="wrapper">
 			<div id="login" class="animate form">
-				<form action="mysuperscript.php" autocomplete="on">
+				<form action="" autocomplete="on">
 					<h4><a href="#tologin" class="to_register" >Log In </a><a href="#toregister" class="to_register" style="text-align: right">Sign Up</a></h4>
 					<p>
 						<input id="username" name="username" required="required" type="text" placeholder="Username" /> </p>
@@ -59,7 +59,7 @@
 				</form>
 			</div>
 			<div id="register" class="animate form">
-				<form action="mysuperscript.php" autocomplete="on">
+				<form action="" autocomplete="on">
 					<h4><a href="#tologin" class="to_register">Log In </a><a href="#toregister" class="to_register" style="text-align: right">Sign Up</a></h4>
 					<p>
 						<input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="Username" /> </p>
