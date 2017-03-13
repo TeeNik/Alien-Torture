@@ -1,2 +1,10 @@
-Web Application
-Multiplayer game
+#### RWS - многопользовательский шутер
+#### Команда:
+
+   * Байрамуков Ян
+   * Злобина Светлана
+   * Кучаева Карина
+ 
+#### Фронтенд: http://rws-2017.herokuapp.com/
+#### Бекенд: http://Rws-backend.herokuapp.com/
+
