@@ -2,25 +2,15 @@
 
     let indPage = document.querySelector("#ind");
     let ratPage = document.querySelector("#rat");
-<<<<<<< HEAD
-    let logPage = document.querySelector("#login");
-    let aboutPage = document.querySelector("#about");
-=======
     let logPage = document.querySelector("#log");
     let aboutPage = document.querySelector("#about");
     let gamePage = document.querySelector("#game");
->>>>>>> f512665a54a90dd01e16e14c83f214acaeb4dd92
 
-    /*const SiteService = window.SiteService;
+    const SiteService = window.SiteService;
     const siteService = new SiteService();
 
     const HTTP = window.HTTP;
-<<<<<<< HEAD
-    const http = new HTTP();*/
-    //http.BaseURL = 'http://Rws-backend.herokuapp.com/api';
-=======
     const http = new HTTP();
->>>>>>> f512665a54a90dd01e16e14c83f214acaeb4dd92
 
     let menu = new Menu({
         el: document.createElement('div'),
@@ -129,35 +119,6 @@
 
         }
     });
-    
-    let about = new About({
-        el: document.createElement('div'),
-		data: {
-			title: "Game title",
-			fields: [
-				{
-					prof: "Fullstack",
-					name: "Kuchaeva Karina"
-				},
-				{
-					prof: "Fullstack", 
-					name: "Zlobina Svetlana"
-				},
-				{
-					prof: "Teambuilding",
-					name: "Bayramukov Yan"
-				},
-				{
-					prof: "Producer",
-					name: "Maschkin Egor"
-				},
-				{
-					prof: "Designer",
-					name: "Ovchinnikov Maksim"
-				}
-			]
-		}
-    });
 
     let about = new About({
         el: document.createElement('div'),
@@ -189,15 +150,6 @@
     });
 
     indPage.appendChild(menu.el);
-<<<<<<< HEAD
-	ratPage.appendChild(rating.el); 
-	logPage.appendChild(login.el); 
-	aboutPage.appendChild(about.el);
-	
-	ratPage.hidden = true;
-	logPage.hidden = true;
-	aboutPage.hidden = true;
-=======
     ratPage.appendChild(rating.el);
     makeRating();
     logPage.appendChild(login.el);
@@ -209,5 +161,4 @@
     logPage.hidden = true;
     aboutPage.hidden = true;
     gamePage.hidden = true;
->>>>>>> f512665a54a90dd01e16e14c83f214acaeb4dd92
 })();

@@ -8,6 +8,13 @@ var shotPoint = game.newCircleObject({
 	radius: 3
 });
 
+var wall = game.newRectObject({
+		x: 200,
+		y: 250,
+		w:100,
+		h:200,
+		fillColor: "red"
+});
 
 
 
@@ -27,7 +34,7 @@ game.newLoop("l1", function()
 			w: 48, h: 48,
 			fillColor: "gray"
 		});		
-	});*/
+	});*sd/
 	
 	OOP.drawArr(blocks);
 	

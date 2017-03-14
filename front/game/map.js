@@ -1,4 +1,3 @@
-var walls = [];
 var map = {
 	width: 26,
 	height: 18,
@@ -10,24 +9,12 @@ var map = {
 var blocks = [];
 
 let t = map.level;
-
-let checkWall = function(el) { 
-    if (el == 6 || el == 37|| el == 23 || el == 24 || el == 29 || el == 30)
-        return true;
-    else return false;
-}
-
-OOP.forArr(t, function(el, i, t){
-    let block = game.newAnimationObject({
-        x: (i%26) * map.tileSize,
-		y: parseInt(i/26) * map.tileSize,
-		w: map.tileSize,
-		h: map.tileSize,
-		animation: map.image.getAnimation(((el-1)%8) * map.tileSize, parseInt((el-1)/8) * map.tileSize, map.tileSize, map.tileSize, 1), 
-        userData: {
-            wall: (el == 6 || el == 37|| el == 23 || el == 24 || el == 29 || el == 30)
-        }
-	}); 
-    if(block.wall) walls.push(block);
-	blocks.push(block);
+OOP.forArr(t, function(el, i, t){ 
+	blocks.push(game.newAnimationObject({
+			x: (i%26) * map.tileSize,
+			y: parseInt(i/26) * map.tileSize,
+			w: map.tileSize,
+			h: map.tileSize,
+			animation: map.image.getAnimation(((el-1)%8) * map.tileSize, parseInt((el-1)/8) * map.tileSize, map.tileSize, map.tileSize, 1), 
+	}));
 });
