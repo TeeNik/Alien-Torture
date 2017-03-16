@@ -55,8 +55,23 @@ var genBox = function(){
     });
     boxs.push(box);
 } 
-
 genBox();
+
+healkits = [];
+var genHealkit = function(){
+    var kit = game.newRectObject({
+        x: 300,
+        y: 300,
+        w: 100,
+        h: 100,
+        fillColor: "red",
+        userData: {
+            life: 1
+        }
+    });
+    healkits.push(kit);
+}
+genHealkit();
 
 var drawItems = function(){
     OOP.forArr(boxs, function (el) {
@@ -64,6 +79,21 @@ var drawItems = function(){
             el.draw();
             if (el.isIntersect(obj)) {
                 el.visible = false;
+                el.life = 0;
+                el = null;               
+            }
+        }
+    });
+    OOP.forArr(healkits, function (el) {
+        if (el.life) {
+            el.draw();
+            if (el.isIntersect(obj)) {
+                el.visible = false;
+                el.life = 0;
+                el = null;
+                console.log(obj.health);
+                obj.health += 3;
+                console.log(obj.health);
             }
         }
     });
