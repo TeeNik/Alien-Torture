@@ -62,8 +62,8 @@ var genHealkit = function(){
     var kit = game.newRectObject({
         x: 300,
         y: 300,
-        w: 100,
-        h: 100,
+        w: 50,
+        h: 50,
         fillColor: "red",
         userData: {
             life: 1

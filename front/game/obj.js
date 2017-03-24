@@ -89,15 +89,15 @@ obj.collision = function(){
             {
                 obj.dx = 0;
             }
-            else if(obj.dx < 0 && obj.x > el.x)
+            else if(obj.dx < 0 && obj.x-10 > el.x)
             {
                 obj.dx = 0;
             }
-            else if(obj.dy > 0 && obj.y < el.y)
+            else if(obj.dy > 0 && obj.y+10 < el.y)
             {
                 obj.dy = 0;
             } 
-            else if(obj.dy < 0 && obj.y > el.y)
+            else if(obj.dy < 0 && obj.y-10 > el.y)
             {
                 obj.dy = 0;
             }
