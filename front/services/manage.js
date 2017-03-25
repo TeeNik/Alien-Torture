@@ -10,9 +10,8 @@ const siteService = new SiteService();
 var playerNames = ["TeeNik", "DronVachevsky"];
 
 
-//rating.hidden = true;
-//login.hidden = true;
-//about.hidden = true;
+Router.init();
+Router.nav("/");
 
 
 
