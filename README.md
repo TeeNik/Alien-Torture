@@ -5,6 +5,6 @@
    * Злобина Светлана
    * Кучаева Карина
  
-#### Фронтенд: http://rws-2017.herokuapp.com/
+#### Фронтенд: https://alien-torture.herokuapp.com/index.html
 #### Бекенд: http://Rws-backend.herokuapp.com/
 
