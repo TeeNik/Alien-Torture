@@ -15,8 +15,8 @@ var img = pjs.tiles.newImage("assets/p2f.png");
 var animS = img.getAnimation(0,0,70,94,1);//72 97
 
 var obj = game.newAnimationObject({
-	x: 100,
-	y: 100,
+	x: 150,
+	y: 150,
 	animation: anim,
 	w: 72,
 	h: 97
@@ -85,19 +85,19 @@ obj.collision = function(){
     OOP.forArr(blocks, function(el){
         if(obj.isIntersect(el) && el.isWall) 
         {
-            if(obj.dx > 0 && obj.x+10 < el.x)
+            if(obj.dx > 0 && oPos.x+10 < el.x)
             {
                 obj.dx = 0;
             }
-            else if(obj.dx < 0 && obj.x-10 > el.x)
+            else if(obj.dx < 0 && oPos.x-10 > el.x)
             {
                 obj.dx = 0;
             }
-            else if(obj.dy > 0 && obj.y+10 < el.y)
+            else if(obj.dy > 0 && oPos.y+10 < el.y)
             {
                 obj.dy = 0;
             } 
-            else if(obj.dy < 0 && obj.y-10 > el.y)
+            else if(obj.dy < 0 && oPos.y-10 > el.y)
             {
                 obj.dy = 0;
             }

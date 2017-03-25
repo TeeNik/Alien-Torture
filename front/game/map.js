@@ -7,17 +7,27 @@ var map = {
 };
 
 var blocks = [];
+var walls = [];
+
+let wallIndex = [6,7,8,14,15,16,20,22,23,24,29,30,31,31,32,37,38]
 
 let t = map.level;
 OOP.forArr(t, function(el, i, t){ 
-	blocks.push(game.newAnimationObject({
+	block = game.newAnimationObject({
 			x: (i%26) * map.tileSize,
 			y: parseInt(i/26) * map.tileSize,
 			w: map.tileSize,
 			h: map.tileSize,
 			animation: map.image.getAnimation(((el-1)%8) * map.tileSize, parseInt((el-1)/8) * map.tileSize, map.tileSize, map.tileSize, 1), 
             userData: {
-                isWall: (el == 6 || el == 37 || el == 7 || el == 23 || el == 24 )
+                isWall: (wallIndex.indexOf(el) != -1),
             }
-	}));
+	});
+	blocks.push(block);
+	if(block.isWall) walls.push(block);
 });
+
+
+for(var b in blocks){
+	if(b.isWall) walls.push(b);
+}

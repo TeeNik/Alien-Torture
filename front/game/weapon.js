@@ -115,13 +115,19 @@ var fire = function () {
         if (el.life) {
             el.draw();
             el.moveAngle(el.speed);
-            if (el.isIntersect(blocks)) {
+			console.log(walls.length);
+            if (el.isArrIntersect(walls)) {
                 el.visible = false;
+				el.life = false;
             }
             if (el.isIntersect(enemy) && el.isVisible() && enemy.isVisible()) {
                 el.visible = false;
                 enemy.health -= el.damage;
+				el.life = false;
             }
         }
+		else {
+			el = null;
+		}
     });
 }

@@ -13,8 +13,6 @@ var playerNames = ["TeeNik", "DronVachevsky"];
 Router.init();
 Router.nav("/");
 
-
-
 function showRating() {
     ind.hidden = true;
     rating.hidden = false;
