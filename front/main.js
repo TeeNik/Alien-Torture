@@ -23,11 +23,11 @@
                 },
                 {
                     name: "Rating",
-                    fun: "showRating()",
+                    fun: " Router.nav('/rating')",
                 },
                 {
                     name: "About",
-                    fun: "showAbout()",
+                    fun: "Router.nav('/about')",
                 },
                 {
                     name: "Logout",
