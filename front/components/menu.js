@@ -28,9 +28,6 @@
                     <br>
                     <br>
                     <br>
-                    <br>
-                    <br>
-                    <br>
                     ${this._getFields()}
                 </div>
 			`;

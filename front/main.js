@@ -15,7 +15,7 @@
     let menu = new Menu({
         el: document.createElement('div'),
         data: {
-            title: "Game title",
+            title: "Break Away",
             fields: [
                 {
                     name: "Start",
@@ -54,7 +54,7 @@
     let login = new Login({
         el: document.createElement('div'),
         data: {
-            title: "Game title",
+            title: "Break Away",
             logfields: [
                 {
                     input: "text",
