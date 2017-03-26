@@ -25,7 +25,7 @@ var Router = {
     },
 
     indexPage: function () {
-        showInd();
+        //showInd();
     },
 
     ratingPage: function () {

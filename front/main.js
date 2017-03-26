@@ -105,16 +105,30 @@
 
     login.on("submit", (event) => {
         //if ($("#register-form").valid() && !lg) {
-        if ($("input[name=usernamesignup]").val() !== "") {
+        /*if ($("input[name=usernamesignup]").val() !== "") {
             event.preventDefault();
             siteService.register($("input[name=usernamesignup]").val(), $("input[name=emailsignup]").val(), $("input[name=passwordsignup]").val(), showInd(), showLogin());
-            /*$("#register-form").each(function () {
-             this.reset();
-             });*/
+             //$("#register-form").each(function () {
+             //this.reset();
+             //});
         } else if ($("input[name=username]").val() !== "") {
             event.preventDefault();
 
+            console.log("here login");
             siteService.login($("input[name=username]").val(), $("input[name=password]").val(),  showInd(), showLogin());
+
+        }*/
+        if ( document.getElementById("usernamesignup").value !== "") {
+            event.preventDefault();
+
+            siteService.register(document.getElementById("usernamesignup").value, document.getElementById("emailsignup").value,
+                document.getElementById("passwordsignup").value, showInd(), showLogin());
+
+        } else if (document.getElementById("username").value !== "") {
+            event.preventDefault();
+
+            console.log("here login");
+            siteService.login(document.getElementById("username").value, document.getElementById("password").value,  showInd(), showLogin());
 
         }
 

@@ -46,11 +46,9 @@
                 const responseParsed = JSON.parse(responseText);
                 console.log(responseParsed);
                 if (xhr.status === 200) {
-                    //showGame();
-                    return true;
+                    showGame();
                 } else {
-                    //showLogin();
-                    return false;
+                    showLogin();
                 }
 
             });
