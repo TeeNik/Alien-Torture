@@ -19,8 +19,9 @@
                 const responseParsed = JSON.parse(responseText);
                 console.log(responseParsed);
                 if (xhr.status === 200) {
-                    //startGame();
-                    location.href = "game/index.html"
+                    showGame();
+                    isAuthed = true;
+                    //location.href = "game/index.html"
                 }
             });
         }
@@ -35,6 +36,7 @@
                 console.log(responseParsed);
                 if (xhr.status === 200) {
                     //startGame();
+                    isAuthed = true;
                     location.href = "game/index.html"
                 }
 
@@ -65,6 +67,7 @@
 
 
                 if (xhr.status === 200) {
+                    isAuthed = false;
                     showLogin();
                 } else {
                     showLogin();

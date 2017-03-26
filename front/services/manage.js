@@ -10,6 +10,8 @@ const siteService = new SiteService();
 
 var playerNames = [];
 
+var isAuthed = false;
+
 Router.init();
 Router.nav("/");
 
@@ -50,9 +52,14 @@ function showAbout() {
 }
 
 function showInd() {
-    if(!siteService.checkAuth()){
+    if(!isAuthed){
         document.getElementById("Profile").hidden = true;
         document.getElementById("Logout").hidden = true;
+    }
+    else
+    {
+        document.getElementById("Profile").hidden = false;
+        document.getElementById("Logout").hidden = false;
     }
     ind.hidden = false;
     rating.hidden = true;
