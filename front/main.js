@@ -5,6 +5,7 @@
     let logPage = document.querySelector("#log");
     let aboutPage = document.querySelector("#about");
     let gamePage = document.querySelector("#game");
+	let profPage = document.querySelector("#prof")
 
     const SiteService = window.SiteService;
     const siteService = new SiteService();
@@ -20,6 +21,10 @@
                 {
                     name: "Start",
                     fun: "auth()",
+                },
+                {
+                    name: "Profile",
+                    fun: "showProfile()",
                 },
                 {
                     name: "Rating",
@@ -129,7 +134,7 @@
     let about = new About({
         el: document.createElement('div'),
         data: {
-            title: "Game title",
+            title: "Break Away",
             fields: [
                 {
                     prof: "Fullstack",
@@ -154,6 +159,47 @@
             ]
         }
     });
+	
+	let prof = new Profile({
+		el: document.createElement('div'),
+        data: {
+            title: "Profile",
+            fields: [
+                {
+                    class: "",
+					id: "email",
+					type: "email",
+					required: "required",
+					placeholder: "Email",
+					value: ""
+                },
+                {
+                    class: "",
+					id: "password",
+					type: "password",
+					required: "required",
+					placeholder: "Password",
+					value: ""
+                },
+                {
+                    class: "",
+					id: "password",
+					type: "password",
+					required: "required",
+					placeholder: "Confirm Password",
+					value: ""
+                },
+                {
+                    class: "login button",
+					id: "",
+					type: "submit",
+					required: "",
+					placeholder: "",
+					value: "Save"
+                }
+            ]
+        }
+	});
 
     indPage.appendChild(menu.el);
     ratPage.appendChild(rating.el);
@@ -161,10 +207,11 @@
     logPage.appendChild(login.el);
     aboutPage.appendChild(about.el);
     gamePage.appendChild(game.el);
-
+    profPage.appendChild(prof.el)
 
     ratPage.hidden = true;
     logPage.hidden = true;
     aboutPage.hidden = true;
     gamePage.hidden = true;
+    profPage.hidden = true;
 })();
