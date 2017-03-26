@@ -1,6 +1,9 @@
 (function () {
 
+    var siteService = new SiteService();
+
     class Menu {
+
         constructor(options = {data: {}}) {
             this.data = options.data;
             this.el = options.el;
@@ -16,7 +19,7 @@
             let {fields = []} = this.data;
 
             return fields.map(field => {
-                return `<p class="title"  onclick="${field.fun}">${field.name}</p>`
+                 return `<p class="title" id="${field.name}" onclick="${field.fun}">${field.name}</p>`
             }).join(' ');
         }
 

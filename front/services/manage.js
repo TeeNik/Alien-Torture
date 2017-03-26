@@ -50,6 +50,10 @@ function showAbout() {
 }
 
 function showInd() {
+    /*if(!siteService.checkAuth()){
+        document.getElementById("Profile").hidden = true;
+        document.getElementById("Logout").hidden = true;
+    }*/
     ind.hidden = false;
     rating.hidden = true;
     login.hidden = true;
@@ -59,6 +63,8 @@ function showInd() {
 }
 
 function startGame() {
+    /*if(siteService.checkAuth()) location.href = "game/index.html";
+    else showLogin();*/
     location.href = "game/index.html";
 }
 
