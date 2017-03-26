@@ -20,7 +20,7 @@
             fields: [
                 {
                     name: "Start",
-                    fun: "auth()",
+                    fun: "startGame()",
                 },
                 {
                     name: "Profile",
@@ -104,20 +104,6 @@
     });
 
     login.on("submit", (event) => {
-        //if ($("#register-form").valid() && !lg) {
-        /*if ($("input[name=usernamesignup]").val() !== "") {
-            event.preventDefault();
-            siteService.register($("input[name=usernamesignup]").val(), $("input[name=emailsignup]").val(), $("input[name=passwordsignup]").val(), showInd(), showLogin());
-             //$("#register-form").each(function () {
-             //this.reset();
-             //});
-        } else if ($("input[name=username]").val() !== "") {
-            event.preventDefault();
-
-            console.log("here login");
-            siteService.login($("input[name=username]").val(), $("input[name=password]").val(),  showInd(), showLogin());
-
-        }*/
         if ( document.getElementById("usernamesignup").value !== "") {
             event.preventDefault();
 
@@ -127,22 +113,9 @@
         } else if (document.getElementById("username").value !== "") {
             event.preventDefault();
 
-            console.log("here login");
             siteService.login(document.getElementById("username").value, document.getElementById("password").value,  showInd(), showLogin());
 
         }
-
-        /*} else if ($("#login-form").valid()) {
-
-            event.preventDefault();
-
-            siteService.login($("input[name=username]").val(), $("input[name=password]").val(),  showInd(), showLogin());
-            $("#login-form").each(function () {
-                this.reset();
-            });
-
-
-        }*/
     });
 
     let about = new About({
@@ -223,9 +196,5 @@
     gamePage.appendChild(game.el);
     profPage.appendChild(prof.el)
 
-    ratPage.hidden = true;
-    logPage.hidden = true;
-    aboutPage.hidden = true;
-    gamePage.hidden = true;
-    profPage.hidden = true;
+    showInd();
 })();

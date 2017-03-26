@@ -93,7 +93,6 @@ var drawItems = function(){
                 el = null;
                 console.log(obj.health);
                 obj.health += 3;
-                console.log(obj.health);
             }
         }
     });

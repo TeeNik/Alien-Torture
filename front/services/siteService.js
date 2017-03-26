@@ -19,7 +19,8 @@
                 const responseParsed = JSON.parse(responseText);
                 console.log(responseParsed);
                 if (xhr.status === 200) {
-                    showGame();
+                    //startGame();
+                    location.href = "game/index.html"
                 }
             });
         }
@@ -33,7 +34,8 @@
                 const responseParsed = JSON.parse(responseText);
                 console.log(responseParsed);
                 if (xhr.status === 200) {
-                    showGame();
+                    //startGame();
+                    location.href = "game/index.html"
                 }
 
             });
@@ -46,9 +48,11 @@
                 const responseParsed = JSON.parse(responseText);
                 console.log(responseParsed);
                 if (xhr.status === 200) {
-                    showGame();
+                    //showGame();
+                    return true;
                 } else {
-                    showLogin();
+                    //showLogin();
+                    return false;
                 }
 
             });
