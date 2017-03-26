@@ -7,8 +7,7 @@ const game = document.getElementById("game");
 const SiteService = window.SiteService;
 const siteService = new SiteService();
 
-var playerNames = ["TeeNik", "DronVachevsky"];
-
+var playerNames = [];
 
 Router.init();
 Router.nav("/");

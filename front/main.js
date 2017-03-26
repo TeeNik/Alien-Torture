@@ -23,11 +23,11 @@
                 },
                 {
                     name: "Rating",
-                    fun: " Router.nav('/rating')",
+                    fun: "showRating()",
                 },
                 {
                     name: "About",
-                    fun: "Router.nav('/about')",
+                    fun: "showAbout()",
                 },
                 {
                     name: "Logout",
@@ -99,15 +99,21 @@
     });
 
     login.on("submit", (event) => {
-        if ($("#register-form").valid() && !lg) {
+        //if ($("#register-form").valid() && !lg) {
+        if ($("input[name=usernamesignup]").val() !== "") {
             event.preventDefault();
-            siteService.register($("input[name=username_reg]").val(), $("input[name=email]").val(), $("input[name=password1]").val(), showInd(), showLogin());
-            $("#register-form").each(function () {
-                this.reset();
-            });
+            siteService.register($("input[name=usernamesignup]").val(), $("input[name=emailsignup]").val(), $("input[name=passwordsignup]").val(), showInd(), showLogin());
+            /*$("#register-form").each(function () {
+             this.reset();
+             });*/
+        } else if ($("input[name=username]").val() !== "") {
+            event.preventDefault();
 
+            siteService.login($("input[name=username]").val(), $("input[name=password]").val(),  showInd(), showLogin());
 
-        } else if ($("#login-form").valid()) {
+        }
+
+        /*} else if ($("#login-form").valid()) {
 
             event.preventDefault();
 
@@ -117,7 +123,7 @@
             });
 
 
-        }
+        }*/
     });
 
     let about = new About({
