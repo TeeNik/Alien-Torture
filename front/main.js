@@ -121,7 +121,7 @@
     let about = new About({
         el: document.createElement('div'),
         data: {
-            title: "Break Away",
+            title: "Our Team",
             fields: [
                 {
                     prof: "Fullstack",

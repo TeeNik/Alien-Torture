@@ -8,7 +8,7 @@ const profile = document.getElementById("prof");
 const SiteService = window.SiteService;
 const siteService = new SiteService();
 
-var playerNames = [];
+var playerNames = ["DronVachevsky", "TeeNik", "Random3355", "Madonna", "AMarev", "ShinyLust", "Makin", "VladislavPG", "Gigson", "Fahrenheit"];
 
 var isAuthed = false;
 
@@ -16,12 +16,12 @@ Router.init();
 Router.nav("/");
 
 
-myAudio = new Audio("game/assets/main_theme.mp3"); 
+/*myAudio = new Audio("game/assets/main_theme.mp3");
 myAudio.addEventListener('ended', function() {
     this.currentTime = 0;
     this.play();
 }, false);
-myAudio.play();
+myAudio.play();*/
 
 
 function showRating() {

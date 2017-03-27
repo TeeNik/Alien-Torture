@@ -16,9 +16,6 @@
             this.el.innerHTML = `
 				<div id="rating" class="mainmenu">
 					<h1 style="font-size: 100px">Rating</h1>
-					<br>
-					<br>
-					<br>
 					<br>`
 					+ temp(playerNames) +
 					`<br>

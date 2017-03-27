@@ -38,14 +38,14 @@
         _updateHtml() {
             this.el.innerHTML = `
 				<div class="mainmenu">
-		<h1>Game Title</h1> </div>
+		<h1>Break Away</h1> </div>
 	<div class="mainmenu">
 		<a class="hiddenanchor" id="toregister"></a>
 		<a class="hiddenanchor" id="tologin"></a>
 		<div id="wrapper">
 			<div id="login" class="animate form">
 				<form action="" autocomplete="on">
-					<h4><a href="#tologin" class="to_register" >Log In </a><a href="#toregister" class="to_register" style="text-align: right">Sign Up</a></h4>
+					<h4><a href="#tologin" class="to_register loganc" >Log In </a><a href="#toregister" class="to_register loganc">Sign Up</a></h4>
 					<p>
 						<input id="username" name="username" required="required" type="text" placeholder="Username" /> </p>
 					<p>
@@ -56,11 +56,13 @@
 					</p>
 					<p class="login button">
 						<input type="submit" value="Login" /> </p>
+					<p class="login button">
+						<input type="button" onclick="showInd();" value="Back" /> </p>
 				</form>
 			</div>
 			<div id="register" class="animate form">
 				<form action="" autocomplete="on">
-					<h4><a href="#tologin" class="to_register">Log In </a><a href="#toregister" class="to_register" style="text-align: right">Sign Up</a></h4>
+					<h4><a href="#tologin" class="to_register loganc">Log In </a><a href="#toregister" class="to_register loganc" style="text-align: right">Sign Up</a></h4>
 					<p>
 						<input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="Username" /> </p>
 					<p>
@@ -71,12 +73,11 @@
 						<input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="Repeat password" /> </p>
 					<p class="signin button">
 						<input type="submit" value="Sign up" /> </p>
+					<p class="login button">
+						<input type="button" onclick="showInd();" value="Back" /> </p>
 				</form>
 			</div>
 		</div>
-	</div>
-	<div class="mainmenu" style="padding-top: 0px">
-		<p class="title" onclick="showInd();">Back</p>
 	</div>
 			`;
         }
