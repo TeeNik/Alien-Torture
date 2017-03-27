@@ -6,6 +6,7 @@
     let aboutPage = document.querySelector("#about");
     let gamePage = document.querySelector("#game");
 	let profPage = document.querySelector("#prof")
+	let loadPage = document.querySelector("#load")
 
     const SiteService = window.SiteService;
     const siteService = new SiteService();
@@ -187,6 +188,13 @@
             ]
         }
 	});
+	
+	let load = new Load({
+		el: document.createElement('div'),
+        data: {
+            text: "We pick your opponents. Please wait."
+        }
+	})
 
     indPage.appendChild(menu.el);
     ratPage.appendChild(rating.el);
@@ -194,7 +202,8 @@
     logPage.appendChild(login.el);
     aboutPage.appendChild(about.el);
     gamePage.appendChild(game.el);
-    profPage.appendChild(prof.el)
+    profPage.appendChild(prof.el);
+	loadPage.appendChild(load.el);
 
     showInd();
 })();
