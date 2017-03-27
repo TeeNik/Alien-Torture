@@ -120,7 +120,6 @@ var drawItems = function(){
                 el.visible = false;
                 el.life = 0;
                 el = null;
-                console.log(obj.health);
                 obj.health += 3;
             }
         }

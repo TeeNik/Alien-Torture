@@ -19,10 +19,14 @@ game.newLoop("l1", function()
     drawEnemy();
 
 	obj.do();
+	
+	drawItems();
+	
+	drawTimer();
     
     drawHP(obj);
     
-    drawItems();
+    
 });
 
 game.startLoop("l1");
