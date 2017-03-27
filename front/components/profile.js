@@ -32,6 +32,7 @@
 					</form>
 				</div>
 			</div>
+		    <p class="title" onclick="showInd();">Back</p>
 		</div>
 			`;
         }

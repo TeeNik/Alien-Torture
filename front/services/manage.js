@@ -15,6 +15,15 @@ var isAuthed = false;
 Router.init();
 Router.nav("/");
 
+
+myAudio = new Audio("game/assets/main_theme.mp3"); 
+myAudio.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+myAudio.play();
+
+
 function showRating() {
     ind.hidden = true;
     rating.hidden = false;

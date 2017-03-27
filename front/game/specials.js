@@ -82,6 +82,12 @@ var teleport = function(){
     }else{
         obj.x = telep.x;
         obj.y = telep.y;
+		
+		OOP.forArr(weapons, function(el){
+			el.x = telep.x;
+        	el.y = telep.y;
+		});
+		
         obj.teleportSet = false;
         telep.visible = false;
         ableSpec = false;
