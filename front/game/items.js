@@ -4,7 +4,13 @@ var pistol = game.newImageObject({
       file : "assets/pistol.png",  
       x: obj.getPositionC().x-30, 
       y: obj.getPositionC().y, 
-      scale: 0.35,
+      scale: 0.38,
+      userData: {
+          setNear: function(){
+              x = obj.getPositionC().x-30;
+              y = obj.getPositionC().y; 
+          }
+      }
 });
 
 var assault = game.newImageObject({
@@ -12,6 +18,12 @@ var assault = game.newImageObject({
       x: obj.getPositionC().x-45,
       y: obj.getPositionC().y, 
       scale: 0.35,
+      userData: {
+          setNear: function(){
+              x = obj.getPositionC().x-45;
+              y = obj.getPositionC().y; 
+          }
+      }
 });
 
 var sniper = game.newImageObject({
@@ -19,13 +31,25 @@ var sniper = game.newImageObject({
       x: obj.getPositionC().x-45,
       y: obj.getPositionC().y, 
       scale: 0.35,
+      userData: {
+          setNear: function(){
+              x = obj.getPositionC().x-45;
+              y = obj.getPositionC().y; 
+          }
+      }
 });
 
 var gun = game.newImageObject({
       file : "assets/gun.png",  
       x: obj.getPositionC().x-45,
-      y: obj.getPositionC().y, 
-      scale: 0.35,
+      y: obj.getPositionC().y+10, 
+      scale: 0.3,
+      userData: {
+          setNear: function(){
+              x = obj.getPositionC().x-45;
+              y = obj.getPositionC().y; 
+          }
+      }
 });
 
 var plasma = game.newImageObject({
@@ -33,6 +57,12 @@ var plasma = game.newImageObject({
       x: obj.getPositionC().x-30,
       y: obj.getPositionC().y, 
       scale: 0.5,
+      userData: {
+          setNear: function(){
+              x = obj.getPositionC().x-30;
+              y = obj.getPositionC().y; 
+          }
+      }
 });
 
 var weapons = [];
@@ -59,12 +89,11 @@ genBox();
 
 healkits = [];
 var genHealkit = function(){
-    var kit = game.newRectObject({
+    var kit = game.newImageObject({
+        file: "assets/medkit.png",
+        scale: 0.5,
         x: 300,
         y: 300,
-        w: 50,
-        h: 50,
-        fillColor: "red",
         userData: {
             life: 1
         }

@@ -12,8 +12,8 @@ var rage = function () {
         animation: an,
         x: oPos.x,
         y: oPos.y,
-        w: 100,
-        h: 100, 
+        w: 150,
+        h: 150, 
         delay: 5
     });
     obj.addSpec = flame;
@@ -84,8 +84,7 @@ var teleport = function(){
         obj.y = telep.y;
 		
 		OOP.forArr(weapons, function(el){
-			el.x = telep.x;
-        	el.y = telep.y;
+			el.setNear()
 		});
 		
         obj.teleportSet = false;

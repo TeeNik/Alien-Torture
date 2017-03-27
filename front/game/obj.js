@@ -77,8 +77,6 @@ obj.control = function(){
 			this.setFlip(1,0);
             this.weapon.setFlip(0,1); 
 		}
-	
-		
 }
 
 obj.collision = function(){
@@ -122,9 +120,10 @@ obj.do = function(){
     obj.move(point(obj.dx,obj.dy));
     obj.moveWeapon();
     obj.checkHP();
-    obj.draw();  
-    obj.weapon.draw();
     if(obj.addSpec){
         obj.addSpec.draw();
     }  
+    obj.draw();  
+    obj.weapon.draw();
+    
 }
