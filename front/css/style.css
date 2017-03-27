@@ -1,3 +1,8 @@
+.soundClass {
+	padding-left: 1000px;
+	padding-top: 20px;
+}
+
 @font-face {
     font-family: pixel;
     src: url(/fonts/joystix.otf);

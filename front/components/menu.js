@@ -26,7 +26,7 @@
         _updateHtml() {
             this.el.innerHTML = `
 				<div id="menu" class="mainmenu">
-                    <h1>${this.data.title || 'default'}</h1>					
+			        <h1>${this.data.title || 'default'}</h1>			
                     <br>
                     <br>
                     <br>

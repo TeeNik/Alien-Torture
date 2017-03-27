@@ -79,7 +79,8 @@ function showInd() {
 }
 
 function startGame() {
-    if(siteService.checkAuth()) location.href = "game/index.html";
+    if(isAuthed)   location.href = "game/index.html"
+    //showInd();//location.href = "game/index.html";
     else showLogin();
 }
 
