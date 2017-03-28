@@ -21,7 +21,7 @@
             fields: [
                 {
                     name: "Start",
-                    fun: "showLoad()",
+                    fun: "startGame()",
                 },
                 {
                     name: "Profile",

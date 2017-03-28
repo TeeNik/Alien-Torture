@@ -270,9 +270,27 @@ input {
 	font-size: 24px;	
 	
 }
+
 #wrapper p.button input:hover{
 	background: rgb(74, 179, 198);
 }
+
+#wrapper p.backbutton input{
+	width: 30%;
+	cursor: pointer;	
+	background: #333;
+	padding: 8px 5px;
+	margin: auto;
+	display: block;
+	font-family: pixel;
+	color: #fff;
+	font-size: 24px;
+}
+
+#wrapper p.backbutton input:hover {
+	background: #474747
+}
+
 #wrapper p.button input:active,
 #wrapper p.button input:focus{
 	background: rgb(40, 137, 154);

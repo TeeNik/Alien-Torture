@@ -56,8 +56,8 @@
 					</p>
 					<p class="login button">
 						<input type="submit" value="Login" /> </p>
-					<p class="login button">
-						<input type="button" onclick="showInd();" value="Back" /> </p>
+					<p class="login backbutton">
+						<input class="backbutton" type="button" onclick="showInd();" value="Back" /> </p>
 				</form>
 			</div>
 			<div id="register" class="animate form">
@@ -73,7 +73,7 @@
 						<input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="Repeat password" /> </p>
 					<p class="signin button">
 						<input type="submit" value="Sign up" /> </p>
-					<p class="login button">
+					<p class="login backbutton">
 						<input type="button" onclick="showInd();" value="Back" /> </p>
 				</form>
 			</div>
