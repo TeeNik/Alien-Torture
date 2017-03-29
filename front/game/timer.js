@@ -11,7 +11,9 @@ var drawTimer = function(){
 	let min = parseInt(time / 60);
 	let sec = time % 60;
 	
-	if(sec == 0) sec = "00";
+	if(sec < 10) {
+		sec = "0" + sec;
+	} 
 	
 	brush.drawTextS({
 		text: min + ":" + sec,
