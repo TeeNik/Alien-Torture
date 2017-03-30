@@ -4,27 +4,26 @@ var pauseBack = game.newImageObject({
 	file: "assets/t0.png",
 	scale: 0.35,
 	positionC: point(game.getWH2().w, game.getWH2().h)
-})
-
-var exitButton = game.newRectObject({
-	w: 100,
-	h: 30,
-	positionCS: point(game.getWH2().w, game.getWH2().h),
-	fillColor: "red"
 });
+
+var soundButton = game.newImageObject({
+	file: "../resources/soundOn.png",
+	scale: 0.35,
+	positionC: point(game.getWH2().w, game.getWH2().h)
+});
+
 
 var exitText = game.newTextObject({
 	positionC: point(game.getWH2().w, game.getWH2().h),
 	size: 50,
 	font: "pixel",
 	text: "Exit",
-	color: "black",
-	
+	color: "black",	
 });
 
 
 
-var checkExitButton = function(){
+var checkPauseButtons = function(){
 	if(mouse.isInObject(exitText)){
 		exitText.size = 60;
 	}
@@ -35,10 +34,21 @@ var checkExitButton = function(){
 	if(mouse.isPeekObject("LEFT", exitText)){
 		location.href = "/../index.html";
 	}
+	
+	if(mouse.isPeekObject("LEFT", soundButton)){
+		if(main_theme.playing){
+			main_theme.pause();
+			
+			soundButton.setImage("../resources/soundOff.png");
+		}
+		else {
+			main_theme.play();
+			soundButton.setImage("../resources/soundOn.png");
+		}
+	}
 }
 
 var pauseWork = function(){
-	//rush.drawRectS(exitButton);
 	if(key.isPress("ESC"))
 	{
 		pause = !pause;
@@ -47,11 +57,12 @@ var pauseWork = function(){
 	if(pause)
 	{
 		pauseBack.setPositionCS(point(game.getWH2().w, game.getWH2().h));
-		exitText.setPositionCS(point(game.getWH2().w-45, game.getWH2().h-50));
+		exitText.setPositionCS(point(game.getWH2().w-45, game.getWH2().h+50));
+		soundButton.setPositionCS(point(game.getWH2().w, game.getWH2().h-50));
 		pauseBack.draw();
 		exitText.draw();
-		exitButton.draw();
-		checkExitButton();	
+		soundButton.draw();
+		checkPauseButtons();	
 	}
 	
 }
