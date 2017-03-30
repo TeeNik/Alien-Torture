@@ -11,7 +11,7 @@ game.newLoop("l1", function()
 	
     drawEnemy();
 
-	if(!pause){
+	if(!pause.pause){
 		obj.do();
 	
 		camera.moveTimeC(pjs.vector.getPointAngle(point(oPos.x + 150, oPos.y), oPos, shotPoint.getAngle()),20);
@@ -28,7 +28,7 @@ game.newLoop("l1", function()
 	
     drawHP(obj);
 	
-	pauseWork();
+	pause.pauseWork();
     
 });
 

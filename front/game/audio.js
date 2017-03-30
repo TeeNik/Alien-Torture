@@ -1,6 +1,6 @@
 (function(){
 	class Audio{
-		constructor{
+		constructor(){
 			this.main_theme = audio.newAudio("assets/main_theme.mp3");
 		}
 	
