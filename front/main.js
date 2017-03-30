@@ -1,7 +1,6 @@
 (function () {
 
-    let indPage = document.querySelector("#ind");
-    let ratPage = document.querySelector("#rat");
+    let indPage = document.querySelector("#ind");   
     let logPage = document.querySelector("#log");
     let aboutPage = document.querySelector("#about");
     let gamePage = document.querySelector("#game");
@@ -29,7 +28,7 @@
                 },
                 {
                     name: "Rating",
-                    fun: "showRating()",
+                    fun: "addRating(); showRating()",
                 },
                 {
                     name: "About",
@@ -43,12 +42,7 @@
         }
     });
 
-    let rating = new Rating({
-        el: document.createElement('div'),
-        data: {
-            title: "Rating",
-        }
-    });
+    
 
     let game = new Game({
         el: document.createElement('div'),
@@ -195,15 +189,31 @@
             text: "We pick your opponents. Please wait."
         }
 	})
+	
+	
+	
 
-    indPage.appendChild(menu.el);
-    ratPage.appendChild(rating.el);
-    makeRating();
+    indPage.appendChild(menu.el);   
     logPage.appendChild(login.el);
     aboutPage.appendChild(about.el);
     gamePage.appendChild(game.el);
     profPage.appendChild(prof.el);
 	loadPage.appendChild(load.el);
+	
 
     showInd();
 })();
+
+
+var addRating = function(){
+	makeRating();
+	let ratPage = document.querySelector("#rat");
+	ratPage.innerHTML = "";
+	let rating = new Rating({
+        el: document.createElement('div'),
+        data: {
+            title: "Rating",
+        }
+    });
+	ratPage.appendChild(rating.el);
+}

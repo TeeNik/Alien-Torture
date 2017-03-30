@@ -28,7 +28,7 @@ game.newLoop("l1", function()
 	
     drawHP(obj);
 	
-	drawTutorial();
+	pauseWork();
     
 });
 
@@ -38,7 +38,7 @@ game.newLoop("tutorial", function()
 {
     oPos = obj.getPositionC();
 	
-	if(key.isPress("K")){
+	if(key.isPress("SPACE")){
 		pause = false;
 		tutState++;
 		if( tutState <= 6){
@@ -75,5 +75,5 @@ game.newLoop("tutorial", function()
 	if(pause) drawTutorial();
 });
 
-//game.startLoop("l1");
-game.startLoop("tutorial");
+game.startLoop("l1");
+//game.startLoop("tutorial");

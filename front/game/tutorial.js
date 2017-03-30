@@ -1,4 +1,3 @@
-var pause = true;
 var tutState = 1;
 
 var t1 = game.newImageObject({

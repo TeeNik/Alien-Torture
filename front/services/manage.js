@@ -9,7 +9,7 @@ const load = document.getElementById("load");
 const SiteService = window.SiteService;
 const siteService = new SiteService();
 
-var playerNames = ["DronVachevsky", "TeeNik", "Random3355", "Madonna", "AMarev", "ShinyLust", "Makin", "VladislavPG", "Gigson", "Fahrenheit"];
+var playerNames =[];// ["DronVachevsky", "TeeNik", "Random3355", "Madonna", "AMarev", "ShinyLust", "Makin", "VladislavPG", "Gigson", "Fahrenheit"];
 
 var isAuthed = false;
 
