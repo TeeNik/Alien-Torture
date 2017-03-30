@@ -27,7 +27,6 @@
 					<p class="title" onclick="showInd();">Back</p>
 				</div>
 			`;
-			console.log(this.el.innerHTML);
 		}
     }
  	window.Rating = Rating;

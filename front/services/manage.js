@@ -107,6 +107,7 @@ function showGame() {
     login.hidden = true;
     about.hidden = true;
 	load.hidden = true;
+	profile.hidden = true;
 }
 
 function auth() {

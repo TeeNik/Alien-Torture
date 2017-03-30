@@ -3,7 +3,6 @@
     let indPage = document.querySelector("#ind");   
     let logPage = document.querySelector("#log");
     let aboutPage = document.querySelector("#about");
-    let gamePage = document.querySelector("#game");
 	let profPage = document.querySelector("#prof")
 	let loadPage = document.querySelector("#load")
 
@@ -44,12 +43,7 @@
 
     
 
-    let game = new Game({
-        el: document.createElement('div'),
-        data: {
-            title: "Game",
-        }
-    });
+    
 
     let login = new Login({
         el: document.createElement('div'),
@@ -196,7 +190,6 @@
     indPage.appendChild(menu.el);   
     logPage.appendChild(login.el);
     aboutPage.appendChild(about.el);
-    gamePage.appendChild(game.el);
     profPage.appendChild(prof.el);
 	loadPage.appendChild(load.el);
 	
@@ -216,4 +209,16 @@ var addRating = function(){
         }
     });
 	ratPage.appendChild(rating.el);
+}
+
+var addGame = function(){
+	let gamePage = document.querySelector("#game");
+	gamePage.innerHTML = "";
+	let game = new Game({
+        el: document.createElement('div'),
+        data: {
+            title: "Game",
+        }
+    });
+	gamePage.appendChild(game.el);
 }

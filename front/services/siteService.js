@@ -85,7 +85,6 @@
 
         makeRating() {
             this.http.get('http://Rws-backend.herokuapp.com/api/rating', function (xhr) {
-                console.log("start making rating");
                 const responseText = xhr.responseText;
                 const responseParsed = JSON.parse(responseText);
 				playerNames = [];

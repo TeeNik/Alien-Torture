@@ -47,9 +47,6 @@ function pug_rethrow(n, e, r, t) {
 }
 
 function temp(locals) {
-	console.log(playerNames);
-	console.log("i'm in temp");
-	
 	var pug_html = ""
 		, pug_mixins = {}
 		, pug_interp;

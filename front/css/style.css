@@ -38,8 +38,12 @@ h4 {
 	margin: 7px 7px 7px 100px;
 }
 
+ol {
+	padding-left: 75px;
+}
 li {
     font-size: 30px;
+	text-align: left;
 }
 
 body {
