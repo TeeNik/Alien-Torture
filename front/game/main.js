@@ -7,7 +7,7 @@ game.newLoop("l1", function()
     game.clear();
     oPos = obj.getPositionC();
 	
-	OOP.drawArr(blocks);
+	map.draw();
 	
     drawEnemy();
 
@@ -24,7 +24,7 @@ game.newLoop("l1", function()
 	
 	drawItems();
 	
-	drawTimer();
+	timer.drawTimer();
 	
     drawHP(obj);
 	

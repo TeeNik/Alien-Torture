@@ -25,14 +25,17 @@ var Router = {
     },
 
     indexPage: function () {
+		history.pushState(null, null, "/");
         //showInd();
     },
 
     ratingPage: function () {
+		history.pushState(null, null, "/rating");
         showRating();
     },
 
     aboutPage: function () {
+		history.pushState(null, null, "/about");
         showAbout();
     }
 };

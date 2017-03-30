@@ -14,6 +14,7 @@ var playerNames =[];// ["DronVachevsky", "TeeNik", "Random3355", "Madonna", "AMa
 var isAuthed = false;
 
 Router.init();
+console.log(window.location.href);
 Router.nav("/");
 
 

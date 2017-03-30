@@ -80,7 +80,7 @@ obj.control = function(){
 }
 
 obj.collision = function(){
-    OOP.forArr(blocks, function(el){
+    OOP.forArr(map.blocks, function(el){
         if(obj.isIntersect(el) && el.isWall) 
         {
             if(obj.dx > 0 && oPos.x+10 < el.x)

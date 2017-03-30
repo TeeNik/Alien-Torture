@@ -27,11 +27,11 @@
                 },
                 {
                     name: "Rating",
-                    fun: "addRating(); showRating()",
+                    fun: "addRating(); Router.nav('/rating')",
                 },
                 {
                     name: "About",
-                    fun: "showAbout()",
+                    fun: "Router.nav('/about')",
                 },
                 {
                     name: "Logout",
