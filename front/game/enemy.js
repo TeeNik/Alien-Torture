@@ -1,3 +1,11 @@
+(function(){
+    class Enemy{
+        constructor(){
+            
+        }
+    }
+})();
+
 var enemy = game.newEllipsObject({
     w: 50,
     h: 100,
@@ -30,7 +38,7 @@ var drawEnemy = function(){
     if(enemy.health > 0){
         enemy.move(point(enemy.speed,0));
         enemy.draw();  
-        drawHP(enemy);
+        GUI.drawHP(enemy);
         if(enemy.health <= 0) {
             
         }

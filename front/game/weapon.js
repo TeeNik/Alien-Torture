@@ -15,7 +15,7 @@ var createShot = function (fileName = "assets/pistolShot.png", sp = 10, dm = 1) 
     bull.speed = sp;
     bulls.push(bull);
 }
-obj.weapon = weapons[0];
+obj.weapon = items.weapons[0];
 var pistolShot = function () {
     if (obj.fireCheck) {
         obj.fireCheck = false;
@@ -76,7 +76,7 @@ var plasmaShot = function () {
     }
 };
 obj.moveWeapon = function () {
-    OOP.forArr(weapons, function (el) {
+    OOP.forArr(items.weapons, function (el) {
         el.move(point(obj.dx, obj.dy));
         el.rotate(mouse.getPosition());
 

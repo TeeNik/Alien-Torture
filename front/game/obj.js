@@ -54,7 +54,7 @@ obj.control = function(){
         }
     
         if(key.isPress("P")){
-            obj.weapon = weapons[(++obj.wNum)%numOfWeapon]; 
+            obj.weapon = items.weapons[(++obj.wNum)%items.numOfWeapon]; 
         }
     
 		
@@ -83,19 +83,21 @@ obj.collision = function(){
     OOP.forArr(map.blocks, function(el){
         if(obj.isIntersect(el) && el.isWall) 
         {
-            if(obj.dx > 0 && oPos.x+10 < el.x)
+            obj.drawDynamicBox();
+            el.drawDynamicBox();
+            if(obj.dx > 0 && oPos.x+50< el.x)
             {
                 obj.dx = 0;
             }
-            else if(obj.dx < 0 && oPos.x-10 > el.x)
+            else if(obj.dx < 0 && oPos.x-50> el.x)
             {
                 obj.dx = 0;
             }
-            else if(obj.dy > 0 && oPos.y+10 < el.y)
+            if(obj.dy > 0 && oPos.y+50 < el.y)
             {
                 obj.dy = 0;
             } 
-            else if(obj.dy < 0 && oPos.y-10 > el.y)
+            else if(obj.dy < 0 && oPos.y-0 > el.y)
             {
                 obj.dy = 0;
             }

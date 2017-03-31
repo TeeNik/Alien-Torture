@@ -22,14 +22,13 @@ game.newLoop("l1", function()
 	}
 	
 	
-	drawItems();
+	items.draw();
 	
 	timer.drawTimer();
-	
-    drawHP(obj);
-	
-	pause.pauseWork();
     
+    gui.draw();
+	
+	pause.pauseWork();    
 });
 
 
@@ -50,16 +49,13 @@ game.newLoop("tutorial", function()
 
 	game.clear();
 		
-		
-
-	OOP.drawArr(blocks);
+	map.draw();
 
 	drawEnemy();
 	if(!pause){	
 		
 		
 		obj.do();
-		console.log("here");
 
 		camera.moveTimeC(pjs.vector.getPointAngle(point(oPos.x + 150, oPos.y), oPos, shotPoint.getAngle()),20);
 		shotPoint.setPositionC(obj.getPositionC());
@@ -68,12 +64,12 @@ game.newLoop("tutorial", function()
 		fire();
 	}
 		
-	drawItems();
+	items.draw();
 	
-	drawTimer();
+	timer.drawTimer();
 	
 	if(pause) drawTutorial();
 });
 
-game.startLoop("l1");
-//game.startLoop("tutorial");
+//game.startLoop("l1");
+game.startLoop("tutorial");
