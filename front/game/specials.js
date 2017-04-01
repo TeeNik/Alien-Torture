@@ -3,13 +3,14 @@
         constructor(){
             this.specs = [];
             this.ableSpec = true;
+			this.telep;
         }
         
         generateSpecs(){
             let rage = function () {
                 obj.speed = 10;
                 ableSpec = false;
-                let an = pjs.tiles.newImage("assets/berserk.png").getAnimation(0,0,350,350,5);
+                let an = pjs.tiles.newImage("/game/assets/berserk.png").getAnimation(0,0,350,350,5);
                 let flame = game.newAnimationObject({
                     animation: an,
                     x: oPos.x,
@@ -22,7 +23,7 @@
                 obj.addSpec.setPositionC(point(oPos.x,oPos.y)); 
                 setTimeout(function () {
                     obj.speed = 7;
-                    ableSpec = true;
+                    this.ableSpec = true;
                     flame.visible = false;
                     obj.addSpec = null;
                 }, 5000);
@@ -31,7 +32,7 @@
             let blastRing = function () {
                 for (let i = 0; i < 12; i++) {
                             var bull = game.newImageObject({
-                                file: "assets/smviolet.png",
+                                file: "/game/assets/smviolet.png",
                                 x: oPos.x,
                                 y: oPos.y,
                                 w: 50,
@@ -44,7 +45,7 @@
                             bull.speed = 5; 
                             bulls.push(bull);
                         }
-                        ableSpec = false;
+                        this.ableSpec = false;
                         setTimeout(function () {
                             ableSpec = true;
                         }, 6000);
@@ -67,11 +68,12 @@
                 }
             }
 
-            let telep;
+            
             obj.teleportSet = false;
-            let teleport = function(){  
+            let teleport = function(){
+				
                 if(!obj.teleportSet){
-                    let an = pjs.tiles.newImage("assets/teleportRune.png").getAnimation(0,0,64,64,4);
+                    let an = pjs.tiles.newImage("/game/assets/teleportRune.png").getAnimation(0,0,64,64,4);
                     telep = game.newAnimationObject({
                         animation: an,
                         x: oPos.x,
@@ -90,8 +92,8 @@
                     });
 
                     obj.teleportSet = false;
-                    telep.visible = false;
-                    ableSpec = false;
+                    this.telep.visible = false;
+                    this.ableSpec = false;
                     setTimeout(function () {
                         ableSpec = true;
                     }, 6000);
@@ -99,7 +101,7 @@
             }
 
             let energyBlast = function(){
-                let an = pjs.tiles.newImage("assets/energyBlast.png").getAnimation(0,0,30,34,6);
+                let an = pjs.tiles.newImage("/game/assets/energyBlast.png").getAnimation(0,0,30,34,6);
                 let bull = game.newAnimationObject({
                                 animation: an,
                                 x: oPos.x,
@@ -123,25 +125,27 @@
             this.specs.push(blastRing);
             this.specs.push(healing);  
         }
+		
+		checkSpec() {
+			if(key.isPress("I")){
+				obj.sNum++;
+			}
+
+			if (mouse.isPress("RIGHT")) {
+				if (this.ableSpec) {
+					this.specs[obj.sNum % 5](); 
+				}
+			}
+		}
     }
+	window.Specials = Specials;
+	
+	
 })();
 
-var ableSpec = true;
-
-
-obj.sNum = 0;
-var specs = [];
+var specials = new Specials();
+specials.generateSpecs();
 
 
 
-obj.checkSpec = function () {
-    if(key.isPress("I")){
-        obj.sNum++;
-    }
-    
-    if (mouse.isPress("RIGHT")) {
-        if (ableSpec) {
-            specs[obj.sNum % 5](); 
-        }
-    }
-}
+

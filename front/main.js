@@ -184,15 +184,11 @@
         }
 	})
 	
-	
-	
-
     indPage.appendChild(menu.el);   
     logPage.appendChild(login.el);
     aboutPage.appendChild(about.el);
     profPage.appendChild(prof.el);
 	loadPage.appendChild(load.el);
-	
 
     showInd();
 })();
@@ -209,16 +205,4 @@ var addRating = function(){
         }
     });
 	ratPage.appendChild(rating.el);
-}
-
-var addGame = function(){
-	let gamePage = document.querySelector("#game");
-	gamePage.innerHTML = "";
-	let game = new Game({
-        el: document.createElement('div'),
-        data: {
-            title: "Game",
-        }
-    });
-	gamePage.appendChild(game.el);
 }

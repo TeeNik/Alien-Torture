@@ -1,11 +1,3 @@
-(function(){
-    class Enemy{
-        constructor(){
-            
-        }
-    }
-})();
-
 var enemy = game.newEllipsObject({
     w: 50,
     h: 100,

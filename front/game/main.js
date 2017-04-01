@@ -25,6 +25,8 @@ game.newLoop("l1", function()
 	items.draw();
 	
 	timer.drawTimer();
+	
+	specials.checkSpec();
     
     gui.draw();
 	
@@ -71,5 +73,5 @@ game.newLoop("tutorial", function()
 	if(pause) drawTutorial();
 });
 
-//game.startLoop("l1");
-game.startLoop("tutorial");
+game.startLoop("l1");
+//game.startLoop("tutorial");

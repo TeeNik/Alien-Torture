@@ -9,10 +9,8 @@ var drawName = function () {
 	});
 };
 
-var img = pjs.tiles.newImage("assets/p2.png");
+var img = pjs.tiles.newImage("/game/assets/p2.png");
 var anim = img.getAnimation(0,0,70,94,11);
-var img = pjs.tiles.newImage("assets/p2f.png");
-var animS = img.getAnimation(0,0,70,94,1);//72 97
 
 var obj = game.newAnimationObject({
 	x: 150,
@@ -30,6 +28,7 @@ obj.health = 1;
 obj.speed = 7;
 obj.addSpec = null;
 obj.wNum = 0;
+obj.sNum = 0;
 
 obj.control = function(){
     
@@ -109,13 +108,14 @@ obj.checkHP = function(){
     if(obj.health > 10) obj.health = 10;
 }
 
+oPos = obj.getPositionC();
+
 obj.do = function(){   
     obj.control();
     obj.drawName();
-    obj.checkSpec();
     
     if(obj.teleportSet){
-        telep.draw();
+        specials.telep.draw();
     }
     
     obj.collision();

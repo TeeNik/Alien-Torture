@@ -1,6 +1,6 @@
 var bulls = [];
 obj.fireCheck = true;
-var createShot = function (fileName = "assets/pistolShot.png", sp = 10, dm = 1) {
+var createShot = function (fileName = "/game/assets/pistolShot.png", sp = 10, dm = 1) {
     var bull = game.newImageObject({
         file: fileName,
         x: oPos.x,
@@ -47,7 +47,7 @@ var gunShot = function () {
         let i = 2;
         setTimeout(function rifle() {
             if (i > 0) {
-                createShot("assets/gunShot.png", 10, 1.5);
+                createShot("/game/assets/gunShot.png", 10, 1.5);
                 i--;
                 setTimeout(rifle, 100);
             }
@@ -60,7 +60,7 @@ var gunShot = function () {
 var sniperShot = function () {
     if (obj.fireCheck) {
         obj.fireCheck = false;
-        createShot("assets/soran.png", 20, 1.5);
+        createShot("/game/assets/soran.png", 20, 1.5);
         setTimeout(function () {
             obj.fireCheck = true;
         }, 500);
@@ -69,7 +69,7 @@ var sniperShot = function () {
 var plasmaShot = function () {
     if (obj.fireCheck) {
         obj.fireCheck = false;
-        createShot("assets/plasmaShot.png", 20, 2);
+        createShot("/game/assets/plasmaShot.png", 20, 2);
         setTimeout(function () {
             obj.fireCheck = true;
         }, 500);

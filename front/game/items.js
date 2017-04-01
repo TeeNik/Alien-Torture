@@ -9,7 +9,7 @@
         
         generateWeapon(){
             let pistol = game.newImageObject({
-                  file : "assets/pistol.png",  
+                  file : "/game/assets/pistol.png",  
                   x: obj.getPositionC().x-30, 
                   y: obj.getPositionC().y, 
                   scale: 0.38,
@@ -22,7 +22,7 @@
             });
 
             let assault = game.newImageObject({
-                  file : "assets/assault.png",  
+                  file : "/game/assets/assault.png",  
                   x: obj.getPositionC().x-45,
                   y: obj.getPositionC().y, 
                   scale: 0.35,
@@ -35,7 +35,7 @@
             });
 
             let sniper = game.newImageObject({
-                  file : "assets/sniper.png",  
+                  file : "/game/assets/sniper.png",  
                   x: obj.getPositionC().x-45,
                   y: obj.getPositionC().y, 
                   scale: 0.35,
@@ -48,7 +48,7 @@
             });
 
             let gun = game.newImageObject({
-                  file : "assets/gun.png",  
+                  file : "/game/assets/gun.png",  
                   x: obj.getPositionC().x-45,
                   y: obj.getPositionC().y+10, 
                   scale: 0.3,
@@ -61,7 +61,7 @@
             });
 
             let plasma = game.newImageObject({
-                  file : "assets/plasma.png",  
+                  file : "/game/assets/plasma.png",  
                   x: obj.getPositionC().x-30,
                   y: obj.getPositionC().y, 
                   scale: 0.5,
@@ -82,7 +82,7 @@
         
         generateBox(){
             let box = game.newImageObject({
-                file: "assets/box.png",
+                file: "/game/assets/box.png",
                 x: 450,
                 y: 450,
                 userData: {
@@ -95,7 +95,7 @@
         
         generateMedkit(){
             let kit = game.newImageObject({
-                file: "assets/medkit.png",
+                file: "/game/assets/medkit.png",
                 scale: 0.5,
                 x: 300,
                 y: 300,
