@@ -15,7 +15,7 @@
 
 .mainmenu {
     text-align: center;
-    padding-top: 50px;
+    padding-top: 20px;
     font-family: pixel;
 }
 
@@ -50,6 +50,9 @@ body {
     background-color: #01FF70;
     margin: 0;
 }
+
+body::-webkit-scrollbar { width: 0; }
+
 
 h1 {
     cursor: default;

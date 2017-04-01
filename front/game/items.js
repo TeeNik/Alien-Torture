@@ -13,10 +13,11 @@
                   x: obj.getPositionC().x-30, 
                   y: obj.getPositionC().y, 
                   scale: 0.38,
+				  self: this,
                   userData: {
                       setNear: function(){
-                          x = obj.getPositionC().x-30;
-                          y = obj.getPositionC().y; 
+                          self.x = obj.getPositionC().x-30;
+                          self.y = obj.getPositionC().y; 
                       }
                   }
             });

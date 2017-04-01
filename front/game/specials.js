@@ -74,7 +74,7 @@
 				
                 if(!obj.teleportSet){
                     let an = pjs.tiles.newImage("/game/assets/teleportRune.png").getAnimation(0,0,64,64,4);
-                    telep = game.newAnimationObject({
+                    this.telep = game.newAnimationObject({
                         animation: an,
                         x: oPos.x,
                         y: oPos.y,
@@ -84,21 +84,22 @@
                     });
                     obj.teleportSet = true;
                 }else{
-                    obj.x = telep.x;
-                    obj.y = telep.y;
+                    obj.x = this.telep.x;
+                    obj.y = this.telep.y;
 
-                    OOP.forArr(weapons, function(el){
+                    OOP.forArr(items.weapons, function(el){
                         el.setNear()
                     });
 
                     obj.teleportSet = false;
                     this.telep.visible = false;
+					this.telep = null;
                     this.ableSpec = false;
                     setTimeout(function () {
-                        ableSpec = true;
-                    }, 6000);
+                        this.ableSpec = true;
+                    }.bind(this), 6000);
                 }
-            }
+            }.bind(this);
 
             let energyBlast = function(){
                 let an = pjs.tiles.newImage("/game/assets/energyBlast.png").getAnimation(0,0,30,34,6);
