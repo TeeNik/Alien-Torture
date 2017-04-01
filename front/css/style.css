@@ -38,6 +38,8 @@ h4 {
 	margin: 7px 7px 7px 100px;
 }
 
+
+
 ol {
 	padding-left: 75px;
 }
@@ -280,7 +282,8 @@ input {
 	background: rgb(74, 179, 198);
 }
 
-.backbutton {
+.backb {
+	border-color: #333;
 	background: #333;
 	cursor: pointer;
 	margin: auto;
@@ -291,7 +294,7 @@ input {
 	width: 30%;
 }
 
-.backbutton:hover{
+.backb:hover{
 	background: #474747;
 }
 

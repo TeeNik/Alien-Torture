@@ -24,7 +24,7 @@
 					<br>`
 					+ temp(playerNames) +
 					`<br>
-					<p class="backbutton" onclick="showInd();">Back</p>
+					<p class="backb" onclick="showInd();">Back</p>
 				</div>
 			`;
 		}
