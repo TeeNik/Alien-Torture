@@ -22,7 +22,7 @@
 				<div id="menu" class="mainmenu">
                     <h1>${this.data.title || 'default'}</h1>
 					${this._getFields()} 
-					<p class="title" onclick="showInd();">Back</p>
+					<p class="backbutton" onclick="showInd();">Back</p>
                 </div>
 			`;
         }

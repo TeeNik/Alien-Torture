@@ -60,7 +60,7 @@ h1 {
     padding-bottom: 20px;
     border: solid;
     border-color: #333;
-    font-size: 100px;
+    font-size: 6vw;
 }
 
 
@@ -114,7 +114,7 @@ h1 {
     margin: 0 auto;
     padding: 10px;
     max-width: 500px;
-    font-size: 50px;
+    font-size: 3vw;
     transition: 0.2s linear;
     cursor: default;
 }
@@ -139,7 +139,6 @@ h3 {
 	font-size: 20px;
 }
 
-/* remove codrops styles and reset the whole thing */
 #container_demo{
 	 text-align: left;
 	 margin: 0;
@@ -232,7 +231,6 @@ input {
   outline: none;
 }
 
-/* all the input except submit and checkbox */
 #wrapper input:not([type="checkbox"]){
 	font-family: pixel;
 	width: 92%;
@@ -281,6 +279,23 @@ input {
 #wrapper p.button input:hover{
 	background: rgb(74, 179, 198);
 }
+
+.backbutton {
+	background: #333;
+	cursor: pointer;
+	margin: auto;
+	display: block;
+	font-family: pixel;
+	color: #fff;
+	font-size: 3vw;
+	width: 30%;
+}
+
+.backbutton:hover{
+	background: #474747;
+}
+
+
 
 #wrapper p.backbutton input{
 	width: 30%;

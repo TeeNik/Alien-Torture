@@ -113,25 +113,26 @@
             title: "Our Team",
             fields: [
                 {
-                    prof: "Fullstack",
+                    prof: "Backend",
                     name: "Kuchaeva Karina"
                 },
                 {
-                    prof: "Fullstack",
+                    prof: "Frontend",
                     name: "Zlobina Svetlana"
                 },
                 {
-                    prof: "Teambuilding",
+                    prof: "Bug Designer",
                     name: "Bayramukov Yan"
+                },
+				{
+                    prof: "Designer",
+                    name: "Ovchinnikov Maksim"
                 },
                 {
                     prof: "Producer",
                     name: "Maschkin Egor"
-                },
-                {
-                    prof: "Designer",
-                    name: "Ovchinnikov Maksim"
                 }
+                
             ]
         }
     });
