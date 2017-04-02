@@ -3,8 +3,9 @@
     let indPage = document.querySelector("#ind");   
     let logPage = document.querySelector("#log");
     let aboutPage = document.querySelector("#about");
-	let profPage = document.querySelector("#prof")
-	let loadPage = document.querySelector("#load")
+	let profPage = document.querySelector("#prof");
+	let loadPage = document.querySelector("#load");
+	let modePage = document.querySelector("#mode");
 
     const SiteService = window.SiteService;
     const siteService = new SiteService();
@@ -19,7 +20,7 @@
             fields: [
                 {
                     name: "Start",
-                    fun: "startGame()",
+                    fun: "showMode()",
                 },
                 {
                     name: "Profile",
@@ -40,10 +41,6 @@
             ]
         }
     });
-
-    
-
-    
 
     let login = new Login({
         el: document.createElement('div'),
@@ -178,6 +175,30 @@
         }
 	});
 	
+	let mode = new Mode({
+		el: document.createElement('div'),
+        data: {
+            title: "Select Mode",
+            fields: [
+                {
+                    mode: "Deathmatch",
+					img: "deathMatch.png",
+					desc: "Select a hero and fight agains other players. Kill more than anybody to win.",
+                },
+                {
+                   mode: "Сatch Flag",
+					img: "lagCapture.png",
+					desc: "Catch the flag and bring it to your base to earn a point. Team with 5 points wins.",
+                },
+                {
+                    mode: "Tutorial",
+					img: "tutorial.png",
+					desc: "Learn the controls and test weapon and skills before joining muliplayer.",
+                }
+            ]
+        }
+	});
+	
 	let load = new Load({
 		el: document.createElement('div'),
         data: {
@@ -190,6 +211,8 @@
     aboutPage.appendChild(about.el);
     profPage.appendChild(prof.el);
 	loadPage.appendChild(load.el);
+	modePage.appendChild(mode.el);
+	
 
     showInd();
 })();

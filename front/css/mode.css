@@ -121,35 +121,13 @@ html {
     @include background-image(linear-gradient(left,  rgba(238,122,54,1) 0%,rgba(235,73,93,1) 100%));    
   }
 }
-h2, h3, p, ul {
-  margin: 0
-}
-h2 {
-  font-size: 1em;
-  font-weight: 400;
-  margin: 0 0 0.5em;
-}
-h3 {
+
+.h3mode {
   font-size: 1.5em;
   letter-spacing: 0.0625em;
   margin: 0 0 0.3333333333333333em;
 }
-p {
-  font-size: 0.875em;  
-}
-p, ul {
-  margin:0 0 1.5em
-}
-ul {
-  color: #fff;
-  font-size: 0.75em;
-  list-style-type: none;
-  padding: 0;
 
-  li {
-    margin: 0 0 0.8333333333333333em;
-  }
-}
 .button {
   background-color: #9c83aa;
   border-radius: 10px;

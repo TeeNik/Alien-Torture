@@ -4,6 +4,7 @@ const rating = document.getElementById("rat");
 const about = document.getElementById("about");
 const profile = document.getElementById("prof");
 const load = document.getElementById("load");
+const mode = document.getElementById("mode");
 
 const SiteService = window.SiteService;
 const siteService = new SiteService();
@@ -32,6 +33,17 @@ function showRating() {
     login.hidden = true;
     about.hidden = true;
 	load.hidden = true;
+	mode.hidden = true;
+}
+
+function showMode() {
+	mode.hidden = false;
+    ind.hidden = true;
+    rating.hidden = true;
+    profile.hidden = true;
+    login.hidden = true;
+    about.hidden = true;
+	load.hidden = true;
 }
 
 function showProfile() {
@@ -41,6 +53,7 @@ function showProfile() {
     login.hidden = true;
     about.hidden = true;
 	load.hidden = true;
+	mode.hidden = true;
 }
 
 function showLoad() {
@@ -50,6 +63,7 @@ function showLoad() {
     login.hidden = true;
     about.hidden = true;
 	load.hidden = false;
+	mode.hidden = true;
 }
 
 function showLogin() {
@@ -59,6 +73,7 @@ function showLogin() {
     about.hidden = true;
     profile.hidden = true;
 	load.hidden = true;
+	mode.hidden = true;
 }
 
 function showAbout() {
@@ -68,6 +83,7 @@ function showAbout() {
     about.hidden = false;
     profile.hidden = true;
 	load.hidden = true;
+	mode.hidden = true;
 }
 
 function showInd() {
@@ -86,6 +102,7 @@ function showInd() {
     about.hidden = true;
     profile.hidden = true;
 	load.hidden = true;
+	mode.hidden = true;
 }
 
 function startGame() {
@@ -101,6 +118,7 @@ function showGame() {
     about.hidden = true;
 	load.hidden = true;
 	profile.hidden = true;
+	mode.hidden = true;
 	//game.startLoop("l1");
 }
 
