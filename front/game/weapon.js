@@ -22,66 +22,62 @@
 		}
 	
 		pistolShot() {
-			if (obj.fireCheck) {
-				obj.fireCheck = false;
+			if (player.fireCheck) {
+				player.fireCheck = false;
 				this.createShot();
 				setTimeout(function () {
-					obj.fireCheck = true;
+					player.fireCheck = true;
 				}, 500);
 			}
 		};
 		
 		assaultShot() {
-			if (obj.fireCheck) {
-				obj.fireCheck = false;
+			if (player.fireCheck) {
+				player.fireCheck = false;
 				for(let i = 1; i < 4; i++){
 					setTimeout(this.createShot.bind(this), 100*i);
 				}
 				setTimeout(function () {
-					obj.fireCheck = true;
+					player.fireCheck = true;
 				}, 500);
 			}
 		};
 		
 		gunShot() {
-			if (obj.fireCheck) {
-				obj.fireCheck = false;
+			if (player.fireCheck) {
+				player.fireCheck = false;
 				let i = 2;
-				setTimeout(function rifle() {
-					if (i > 0) {
-						createShot("/game/assets/gunShot.png", 10, 1.5);
-						i--;
-						setTimeout(rifle, 100);
-					}
-				}.bind(this), 100);
+				for(let i = 1; i < 3; i++){
+					setTimeout(this.createShot.bind(this,"/game/assets/gunShot.png", 10, 1.5), 100*i);
+				}
 				setTimeout(function () {
-					obj.fireCheck = true;
+					player.fireCheck = true;
 				}, 500);
 			}
 		};
 		sniperShot() {
-			if (obj.fireCheck) {
-				obj.fireCheck = false;
+			if (player.fireCheck) {
+				player.fireCheck = false;
 				this.createShot("/game/assets/soran.png", 20, 1.5);
 				setTimeout(function () {
-					obj.fireCheck = true;
+					player.fireCheck = true;
 				}, 500);
 			}
 		};
 		
 		plasmaShot() {
-			if (obj.fireCheck) {
-				obj.fireCheck = false;
+			if (player.fireCheck) {
+				player.fireCheck = false;
 				this.createShot("/game/assets/plasmaShot.png", 20, 2);
 				setTimeout(function () {
-					obj.fireCheck = true;
+					player.fireCheck = true;
 				}, 500);
 			}
 		};
 		
 		fire() {
 			if (mouse.isPress("LEFT")) {
-				switch (obj.wNum % 5) {
+				switch (player.wNum % 5) {
 				case 0:
 					this.pistolShot();
 					break;
@@ -122,12 +118,12 @@
 		
 		moveWeapon() {
 			OOP.forArr(items.weapons, function (el) {
-				el.move(point(obj.dx, obj.dy));
+				el.move(point(player.dx, player.dy));
 				el.rotate(mouse.getPosition());
 
 			});
-			if (obj.addSpec) {
-				obj.addSpec.move(point(obj.dx, obj.dy));
+			if (player.addSpec) {
+				player.addSpec.move(point(player.dx, player.dy));
 			}
 		}
 	

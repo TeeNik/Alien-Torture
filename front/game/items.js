@@ -10,66 +10,66 @@
         generateWeapon(){
             let pistol = game.newImageObject({
                   file : "/game/assets/pistol.png",  
-                  x: obj.getPositionC().x-30, 
-                  y: obj.getPositionC().y, 
+                  x: oPos.x-30, 
+                  y: oPos.y, 
                   scale: 0.38,
 				  self: this,
                   userData: {
                       setNear: function(){
-                          self.x = obj.getPositionC().x-30;
-                          self.y = obj.getPositionC().y; 
+                          self.x = oPos.x-30;
+                          self.y = oPos.y; 
                       }
                   }
             });
 
             let assault = game.newImageObject({
                   file : "/game/assets/assault.png",  
-                  x: obj.getPositionC().x-45,
-                  y: obj.getPositionC().y, 
+                  x: oPos.x-45,
+                  y: oPos.y, 
                   scale: 0.35,
                   userData: {
                       setNear: function(){
-                          x = obj.getPositionC().x-45;
-                          y = obj.getPositionC().y; 
+                          x = oPos.x-45;
+                          y = oPos.y; 
                       }
                   }
             });
 
             let sniper = game.newImageObject({
                   file : "/game/assets/sniper.png",  
-                  x: obj.getPositionC().x-45,
-                  y: obj.getPositionC().y, 
+                  x: oPos.x-45,
+                  y: oPos.y, 
                   scale: 0.35,
                   userData: {
                       setNear: function(){
-                          x = obj.getPositionC().x-45;
-                          y = obj.getPositionC().y; 
+                          x = oPos.x-45;
+                          y = oPos.y; 
                       }
                   }
             });
 
             let gun = game.newImageObject({
                   file : "/game/assets/gun.png",  
-                  x: obj.getPositionC().x-45,
-                  y: obj.getPositionC().y+10, 
+                  x: oPos.x-45,
+                  y: oPos.y+10, 
                   scale: 0.3,
                   userData: {
                       setNear: function(){
-                          x = obj.getPositionC().x-45;
-                          y = obj.getPositionC().y; 
+                          x = oPos.x-45;
+                          y = oPos.y; 
                       }
                   }
             });
 
             let plasma = game.newImageObject({
                   file : "/game/assets/plasma.png",  
-                  x: obj.getPositionC().x-30,
-                  y: obj.getPositionC().y, 
+                  x: oPos.x-30,
+                  y: oPos.y, 
                   scale: 0.5,
                   userData: {
                       setNear: function(){
-                          x = obj.getPositionC().x-30;
-                          y = obj.getPositionC().y; 
+                          x = oPos.x-30;
+                          y = oPos.y; 
                       }
                   }
             });
@@ -79,7 +79,7 @@
             this.weapons.push(sniper);
             this.weapons.push(gun);
             this.weapons.push(plasma);
-			obj.weapon = items.weapons[0];
+			player.weapon = items.weapons[0];
         }
         
         generateBox(){
@@ -112,7 +112,7 @@
             OOP.forArr(this.boxs, function (el) {
                 if (el.life) {
                     el.draw();
-                    if (el.isIntersect(obj)) {
+                    if (el.isIntersect(player.obj)) {
                         el.visible = false;
                         el.life = 0;
                         el = null;               
@@ -122,11 +122,11 @@
             OOP.forArr(this.medkits, function (el) {
                 if (el.life) {
                     el.draw();
-                    if (el.isIntersect(obj)) {
+                    if (el.isIntersect(player.obj)) {
                         el.visible = false;
                         el.life = 0;
                         el = null;
-                        obj.health += 3;
+                        player.health += 3;
                     }
                 }
             });

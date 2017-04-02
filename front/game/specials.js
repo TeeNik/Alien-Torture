@@ -8,8 +8,8 @@
         
         generateSpecs(){
             let rage = function () {
-                obj.speed = 10;
-                ableSpec = false;
+                player.speed = 10;
+                this.ableSpec = false;
                 let an = pjs.tiles.newImage("/game/assets/berserk.png").getAnimation(0,0,350,350,5);
                 let flame = game.newAnimationObject({
                     animation: an,
@@ -19,13 +19,13 @@
                     h: 150, 
                     delay: 5
                 });
-                obj.addSpec = flame;
-                obj.addSpec.setPositionC(point(oPos.x,oPos.y)); 
+                player.addSpec = flame;
+                player.addSpec.setPositionC(point(oPos.x,oPos.y)); 
                 setTimeout(function () {
-                    obj.speed = 7;
+                    player.speed = 7;
                     this.ableSpec = true;
                     flame.visible = false;
-                    obj.addSpec = null;
+                    player.addSpec = null;
                 }, 5000);
             }
 
@@ -43,11 +43,11 @@
                                 }
                             });
                             bull.speed = 5; 
-                            bulls.push(bull);
+                            weapon.bulls.push(bull);
                         }
                         this.ableSpec = false;
                         setTimeout(function () {
-                            ableSpec = true;
+                            this.ableSpec = true;
                         }, 6000);
             }
 
@@ -58,21 +58,21 @@
             let healing = function() {
                 let heal = true;
                     if(heal){
-                        obj.speed = 0;
+                        player.speed = 0;
                         heal = false;
                         setTimeout(function(){
-                            obj.speed = 7;
-                            obj.health++;
+                            player.speed = 7;
+                            player.health++;
                             heal = true;
                         },1000);
                 }
             }
 
             
-            obj.teleportSet = false;
+            player.teleportSet = false;
             let teleport = function(){
 				
-                if(!obj.teleportSet){
+                if(!player.teleportSet){
                     let an = pjs.tiles.newImage("/game/assets/teleportRune.png").getAnimation(0,0,64,64,4);
                     this.telep = game.newAnimationObject({
                         animation: an,
@@ -82,16 +82,16 @@
                         h:64,
                         fillColor: "violet"
                     });
-                    obj.teleportSet = true;
+                    player.teleportSet = true;
                 }else{
-                    obj.x = this.telep.x;
-                    obj.y = this.telep.y;
+                    player.obj.x = this.telep.x;
+                    player.obj.y = this.telep.y;
 
                     OOP.forArr(items.weapons, function(el){
                         el.setNear()
                     });
 
-                    obj.teleportSet = false;
+                    player.teleportSet = false;
                     this.telep.visible = false;
 					this.telep = null;
                     this.ableSpec = false;
@@ -129,12 +129,12 @@
 		
 		checkSpec() {
 			if(key.isPress("I")){
-				obj.sNum++;
+				player.sNum++;
 			}
 
 			if (mouse.isPress("RIGHT")) {
 				if (this.ableSpec) {
-					this.specs[obj.sNum % 5](); 
+					this.specs[player.sNum % 5](); 
 				}
 			}
 		}

@@ -5,17 +5,17 @@ var shotPoint = game.newCircleObject({
 game.newLoop("l1", function()
 {
     game.clear();
-    oPos = obj.getPositionC();
+    oPos = player.obj.getPositionC();
 	
 	map.draw();
 	
     drawEnemy();
 
 	if(!pause.pause){
-		obj.do();
+		player.do();
 	
 		camera.moveTimeC(pjs.vector.getPointAngle(point(oPos.x + 150, oPos.y), oPos, shotPoint.getAngle()),20);
-		shotPoint.setPositionC(obj.getPositionC());
+		shotPoint.setPositionC(oPos);
 		shotPoint.rotate(mouse.getPosition());
 	
 		weapon.fire();
