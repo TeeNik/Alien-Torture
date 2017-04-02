@@ -79,6 +79,7 @@
             this.weapons.push(sniper);
             this.weapons.push(gun);
             this.weapons.push(plasma);
+			obj.weapon = items.weapons[0];
         }
         
         generateBox(){

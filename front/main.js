@@ -20,7 +20,7 @@
             fields: [
                 {
                     name: "Start",
-                    fun: "showMode()",
+                    fun: "startGame()",
                 },
                 {
                     name: "Profile",

@@ -106,7 +106,7 @@ function showInd() {
 }
 
 function startGame() {
-    if(isAuthed)   location.href = "game/index.html"
+    if(isAuthed)   showMode();
     //showInd();//location.href = "game/index.html";
     else showLogin();
 }

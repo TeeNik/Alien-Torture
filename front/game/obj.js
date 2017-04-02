@@ -30,6 +30,8 @@ obj.addSpec = null;
 obj.wNum = 0;
 obj.sNum = 0;
 
+obj.fireCheck = true;
+
 obj.control = function(){
     
 		this.dx = this.dy = 0;
@@ -120,7 +122,7 @@ obj.do = function(){
     
     obj.collision();
     obj.move(point(obj.dx,obj.dy));
-    obj.moveWeapon();
+    //obj.moveWeapon();
     obj.checkHP();
     if(obj.addSpec){
         obj.addSpec.draw();

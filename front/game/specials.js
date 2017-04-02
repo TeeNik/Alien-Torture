@@ -117,7 +117,7 @@
                             });
                 bull.speed = 7;
                 bull.damage = 5;
-                bulls.push(bull);
+                weapon.bulls.push(bull);
             }
 
             this.specs.push(energyBlast);

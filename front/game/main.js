@@ -18,8 +18,10 @@ game.newLoop("l1", function()
 		shotPoint.setPositionC(obj.getPositionC());
 		shotPoint.rotate(mouse.getPosition());
 	
-		fire();
+		weapon.fire();
 	}
+	
+	weapon.moveWeapon();
 	
 	
 	items.draw();
