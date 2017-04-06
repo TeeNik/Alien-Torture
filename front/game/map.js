@@ -13,7 +13,9 @@
 			this.blocks = [];
 			this.walls = [];
 
-			this.wallIndex = [6,7,8,14,15,16,20,22,23,24,29,30,31,31,32,37,38];		
+			this.wallIndex = [6,7,8,14,15,16,20,22,23,24,29,30,31,31,32,37,38];	
+			
+			this.map2d = [];
 		}
 	
 		generateWalls(){
@@ -34,9 +36,19 @@
 			}.bind(this));
 		};
 		
+		generate2d(){
+			let l = this.level;
+			while(l.length) this.map2d.push(l.splice(0,26));
+		}
+		
 		draw(){
 			OOP.drawArr(this.blocks);
 		};
+		
+		isItWall(x, y){
+			console.log(x + "  " + y);
+			return (this.wallIndex.indexOf(this.map2d[x][y]) != -1);
+		}
 	}
 
 	window.Map = Map;
@@ -45,3 +57,4 @@
 
 var map = new Map();
 map.generateWalls();
+map.generate2d();

@@ -36,7 +36,7 @@
                 },
                 {
                     name: "Logout",
-                    fun: "userLogout()",
+                    fun: "Router.nav('/login')",
                 },
             ]
         }

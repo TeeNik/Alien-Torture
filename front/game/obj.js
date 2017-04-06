@@ -39,7 +39,7 @@
 			}
 
 			if(key.isPress("P")){
-				this.weapon = items.weapons[(++obj.wNum)%items.numOfWeapon]; 
+				this.weapon = items.weapons[(++this.wNum)%items.numOfWeapon]; 
 			}
 
 
@@ -73,6 +73,14 @@
 				size: 14
 			});
 		};
+		
+		get2dPosX(){
+			return parseInt(this.obj.x / 128);
+		}
+		
+		get2dPosY(){
+			return parseInt(this.obj.y / 128);
+		}
 	
 		collision(){
 			OOP.forArr(map.blocks, function(el){
@@ -80,19 +88,19 @@
 				{
 					this.obj.drawDynamicBox();
 					el.drawDynamicBox();
-					if(this.obj.dx > 0 && oPos.x+50< el.x)
+					if(this.dx > 0 && oPos.x < el.x && map.isItWall(this.get2dPosX()+1, this.get2dPosY()))
 					{
 						this.dx = 0;
 					}
-					else if(this.dx < 0 && oPos.x-50> el.x)
+					else if(this.dx < 0 && oPos.x> el.x && map.isItWall(this.get2dPosX()-1, this.get2dPosY()))
 					{
 						this.dx = 0;
 					}
-					if(this.dy > 0 && oPos.y+50 < el.y)
+					if(this.dy > 0 && oPos.y < el.y && map.isItWall(this.get2dPosX()+1, this.get2dPosY()))
 					{
 						this.dy = 0;
 					} 
-					else if(this.dy < 0 && oPos.y-0 > el.y)
+					else if(this.dy < 0 && oPos.y > el.y && map.isItWall(this.get2dPosX()-1, this.get2dPosY()))
 					{
 						this.dy = 0;
 					}
@@ -118,7 +126,8 @@
 			if(this.addSpec){
 				this.addSpec.draw();
 			}  
-			this.obj.draw();  
+			this.obj.draw(); 
+			GUI.drawHP(this);
 			this.weapon.draw();
 		};
 		

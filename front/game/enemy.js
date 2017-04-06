@@ -1,9 +1,37 @@
+/*(function(){
+	class Enemy{
+		constructor(){
+			this.obj = game.newEllipsObject({
+				w: 50,
+				h: 100,
+				x: 300,
+				y: 300,
+				fillColor: "yellow"
+			});
+			this.health = 10;
+			this.speed = 2;
+		}
+		
+		drawEnemy(){
+			if(enemy.health > 0){
+			this.move(point(enemy.speed,0));
+			enemy.draw();  
+			GUI.drawHP(enemy);
+			} else {
+				enemy.visible = false;
+			}    
+		}
+	}
+	
+	window.Enemy = Enemy;
+})();*/
+
 var enemy = game.newEllipsObject({
-    w: 50,
-    h: 100,
-    x: 300,
-    y: 300,
-    fillColor: "yellow"
+	w: 50,
+	h: 100,
+	x: 300,
+	y: 300,
+	fillColor: "yellow"
 });
 
 enemy.health = 10;
@@ -31,9 +59,6 @@ var drawEnemy = function(){
         enemy.move(point(enemy.speed,0));
         enemy.draw();  
         GUI.drawHP(enemy);
-        if(enemy.health <= 0) {
-            
-        }
     } else {
         enemy.visible = false;
     }    

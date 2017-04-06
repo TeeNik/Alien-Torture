@@ -3,6 +3,7 @@ var Router = {
         "/": "indexPage",
         "/rating": "ratingPage",
         "/about": "aboutPage",
+        "/login": "loginPage"
     },
     init: function (){
         this._routes = [];
@@ -25,18 +26,24 @@ var Router = {
     },
 
     indexPage: function () {
-		history.pushState(null, null, "/");
+        history.pushState(null, null, "/");
         showInd();
     },
 
     ratingPage: function () {
-		history.pushState(null, null, "/rating");
+        alert(123);
+        history.pushState(null, null, "/rating");
         showRating();
     },
 
     aboutPage: function () {
-		history.pushState(null, null, "/about");
+        history.pushState(null, null, "/about");
         showAbout();
+    },
+
+    logoutPage: function () {
+        history.pushState(null, null, "/login");
+        showLogin();
     }
 };
 
@@ -47,8 +54,14 @@ var getLocation = function(href) {
 };
 
 window.onpopstate = function(e){
-	e.preventDefault();
-	var l = getLocation(document.location.href);
-	Router.nav(""+l.pathname);
+    e.preventDefault();
+    var l = getLocation(document.location.href);
+    alert(getLocation(document.location.href));
+    Router.nav(""+l.pathname);
 }
+
+Router.init();
+let str = getLocation(document.location.href).pathname;
+Router.nav(str.substring(0, str.length - 1));
+
 

@@ -26,8 +26,8 @@
             brush.drawRoundRect({
                 w: 62,
                 h: 9,
-                x: oPos.x + 5,
-                y: oPos.y - 8,
+                x: oPos.x - 30,
+                y: oPos.y - 52,
                 radius: 5,
                 fillColor: "gray",
                 strokeColor: "darkred",
@@ -36,8 +36,8 @@
             brush.drawRoundRect({
                 w: player.health*6,
                 h: 7,
-                x: oPos.x + 7,
-                y: oPos.y - 6,
+                x: oPos.x - 28,
+                y: oPos.y - 50,
                 radius: 5,
                 fillColor: "red"
             });          
