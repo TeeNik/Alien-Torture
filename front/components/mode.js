@@ -36,7 +36,7 @@
 					<img class = "msimg" src="resources/flagCapture.png">
 					<p>Catch the flag and bring it to your base to earn a point. Team with 5 points wins.</p>
 				</div>
-				<div class="grid-1-5 col-1">
+				<div class="grid-1-5 col-1" onclick="location.href = 'game/index.html'">
 					<h3 class="h3mode"><span class="uppercase">Tutorial</span></h3>
 					<img class = "msimg" src="resources/tutorial.png">
 					<p>Learn the controls and test weapon and skills before joining muliplayer.</p>

@@ -26,7 +26,7 @@ var Router = {
 
     indexPage: function () {
 		history.pushState(null, null, "/");
-        //showInd();
+        showInd();
     },
 
     ratingPage: function () {
@@ -39,3 +39,16 @@ var Router = {
         showAbout();
     }
 };
+
+var getLocation = function(href) {
+    var l = document.createElement("a");
+    l.href = href;
+    return l;
+};
+
+window.onpopstate = function(e){
+	e.preventDefault();
+	var l = getLocation(document.location.href);
+	Router.nav(""+l.pathname);
+}
+
