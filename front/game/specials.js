@@ -10,7 +10,7 @@
             let rage = function () {
                 player.speed = 10;
                 this.ableSpec = false;
-                let an = pjs.tiles.newImage("/game/assets/berserk.png").getAnimation(0,0,350,350,5);
+                let an = pjs.tiles.newImage("assets/berserk.png").getAnimation(0,0,350,350,5);
                 let flame = game.newAnimationObject({
                     animation: an,
                     x: oPos.x,
@@ -32,7 +32,7 @@
             let blastRing = function () {
                 for (let i = 0; i < 12; i++) {
                             var bull = game.newImageObject({
-                                file: "/game/assets/smviolet.png",
+                                file: "assets/smviolet.png",
                                 x: oPos.x,
                                 y: oPos.y,
                                 w: 50,
@@ -73,7 +73,7 @@
             let teleport = function(){
 				
                 if(!player.teleportSet){
-                    let an = pjs.tiles.newImage("/game/assets/teleportRune.png").getAnimation(0,0,64,64,4);
+                    let an = pjs.tiles.newImage("assets/teleportRune.png").getAnimation(0,0,64,64,4);
                     this.telep = game.newAnimationObject({
                         animation: an,
                         x: oPos.x,
@@ -102,7 +102,7 @@
             }.bind(this);
 
             let energyBlast = function(){
-                let an = pjs.tiles.newImage("/game/assets/energyBlast.png").getAnimation(0,0,30,34,6);
+                let an = pjs.tiles.newImage("assets/energyBlast.png").getAnimation(0,0,30,34,6);
                 let bull = game.newAnimationObject({
                                 animation: an,
                                 x: oPos.x,

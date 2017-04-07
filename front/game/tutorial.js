@@ -1,7 +1,7 @@
 var tutState = 1;
 
 var t1 = game.newImageObject({
-	file: "/game/assets/t1.png",
+	file: "assets/t1.png",
 	x: 10,
 	y: 10,
 	scale: 0.3,
@@ -11,7 +11,7 @@ var t1 = game.newImageObject({
 var drawTutorial = function(){
 	
 	brush.drawImageS({
-		file: "/game/assets/t" + tutState + ".png",
+		file: "assets/t" + tutState + ".png",
 		x: screen.width/2.5,
 		y: screen.height/3.5,
 		scale: 0.35,

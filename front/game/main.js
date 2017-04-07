@@ -9,7 +9,7 @@ game.newLoop("l1", function()
 	
 	map.draw();
 	
-    drawEnemy();
+    enemy.draw();
 
 	if(!pause.pause){
 		player.do();

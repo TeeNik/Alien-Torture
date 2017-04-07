@@ -75,11 +75,11 @@
 		};
 		
 		get2dPosX(){
-			return parseInt(this.obj.x / 128);
+			return parseInt(oPos.x / 128);
 		}
 		
 		get2dPosY(){
-			return parseInt(this.obj.y / 128);
+			return parseInt(oPos.y / 128);
 		}
 	
 		collision(){
@@ -88,22 +88,39 @@
 				{
 					this.obj.drawDynamicBox();
 					el.drawDynamicBox();
-					if(this.dx > 0 && oPos.x < el.x && map.isItWall(this.get2dPosX()+1, this.get2dPosY()))
-					{
+                    if(this.dx > 0 && this.obj.x < el.x && map.isItWall(this.get2dPosX()+1, this.get2dPosY()))
+                    {
+                        this.dx = 0;
+                    }
+                    else if(this.dx < 0 && this.obj.x> el.x && map.isItWall(this.get2dPosX()-1, this.get2dPosY()))
+                    {
+                        this.dx = 0;
+                    }
+                    if(this.dy > 0 && this.obj.y < el.y && map.isItWall(this.get2dPosX(), this.get2dPosY()+1))
+                    {
+                        this.dy = 0;
+                    }
+                    else if(this.dy < 0 && this.obj.y > el.y && map.isItWall(this.get2dPosX(), this.get2dPosY()-1))
+                    {
+                        this.dy = 0;
+                    }
+					if(this.dx > 0 && this.dy > 0 && this.obj.x < el.x && this.obj.y < el.y && map.isItWall(this.get2dPosX()+1, this.get2dPosY()+1)){
 						this.dx = 0;
+						this.dy = 0;
 					}
-					else if(this.dx < 0 && oPos.x> el.x && map.isItWall(this.get2dPosX()-1, this.get2dPosY()))
-					{
+					if(this.dx > 0 && this.dy < 0 && this.obj.x < el.x && this.obj.y > el.y && map.isItWall(this.get2dPosX()+1, this.get2dPosY()-1)){
 						this.dx = 0;
-					}
-					if(this.dy > 0 && oPos.y < el.y && map.isItWall(this.get2dPosX()+1, this.get2dPosY()))
-					{
-						this.dy = 0;
-					} 
-					else if(this.dy < 0 && oPos.y > el.y && map.isItWall(this.get2dPosX()-1, this.get2dPosY()))
-					{
 						this.dy = 0;
 					}
+					if(this.dx < 0 && this.dy > 0 && this.obj.x > el.x && this.obj.y < el.y && map.isItWall(this.get2dPosX()-1, this.get2dPosY()+1)){
+						this.dx = 0;
+						this.dy = 0;
+					}
+					if(this.dx < 0 && this.dy < 0 && this.obj.x > el.x && this.obj.y > el.y && map.isItWall(this.get2dPosX()-1, this.get2dPosY()-1)){
+						this.dx = 0;
+						this.dy = 0;
+					}
+					
 				} 
 			}.bind(this));
 		};
@@ -126,16 +143,15 @@
 			if(this.addSpec){
 				this.addSpec.draw();
 			}  
-			this.obj.draw(); 
-			GUI.drawHP(this);
+			this.obj.draw();  
 			this.weapon.draw();
 		};
 		
 		init() {
 			let an = this.anim;
 			this.obj = game.newAnimationObject({
-				x: 150,
-				y: 150,
+				x: 300,
+				y: 300,
 				animation: an,
 				w: 72,
 				h: 97
@@ -150,9 +166,9 @@
 	
 })();
 
-//var img = pjs.tiles.newImage("/game/assets/p2.png");
+//var img = pjs.tiles.newImage("assets/p2.png");
 
-var player = new Person("/game/assets/p2.png");
+var player = new Person("assets/p2.png");
 player.init();
 
 

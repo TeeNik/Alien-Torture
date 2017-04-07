@@ -4,7 +4,7 @@
 			this.pause = false;
 
 			this.pauseBack = game.newImageObject({
-				file: "/game/assets/t0.png",
+				file: "assets/t0.png",
 				scale: 0.35,
 				positionC: point(game.getWH2().w, game.getWH2().h)
 			});

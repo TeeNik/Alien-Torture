@@ -21,22 +21,27 @@
                 {
                     name: "Start",
                     fun: "startGame()",
+                    stroke: "stroke",
                 },
                 {
                     name: "Profile",
                     fun: "showProfile()",
+                    stroke: "",
                 },
                 {
                     name: "Rating",
-                    fun: "addRating(); Router.nav('/rating')",
+                    fun: "addRating(); router.nav('/rating')",
+                    stroke: "",
                 },
                 {
                     name: "About",
-                    fun: "Router.nav('/about')",
+                    fun: "router.nav('/about')",
+                    stroke: "",
                 },
                 {
                     name: "Logout",
-                    fun: "Router.nav('/login')",
+                    fun: "router.nav('/login')",
+                    stroke: "",
                 },
             ]
         }
@@ -212,9 +217,6 @@
     profPage.appendChild(prof.el);
 	loadPage.appendChild(load.el);
 	modePage.appendChild(mode.el);
-	
-
-    showInd();
 })();
 
 

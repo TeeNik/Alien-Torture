@@ -13,14 +13,6 @@ var playerNames =[];// ["DronVachevsky", "TeeNik", "Random3355", "Madonna", "AMa
 
 var isAuthed = false;
 
-alert(window.location.pathname);
-
-
-Router.init();
-
-
-
-
 /*myAudio = new Audio("game/assets/main_theme.mp3");
 myAudio.addEventListener('ended', function() {
     this.currentTime = 0;

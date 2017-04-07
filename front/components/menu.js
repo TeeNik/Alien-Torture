@@ -19,7 +19,7 @@
             let {fields = []} = this.data;
 
             return fields.map(field => {
-                 return `<p class="title" id="${field.name}" onclick="${field.fun}">${field.name}</p>`
+                 return `<p class="title ${field.stroke}" id="${field.name}" onclick="${field.fun}">${field.name}</p>`
             }).join(' ');
         }
 

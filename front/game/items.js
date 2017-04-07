@@ -9,7 +9,7 @@
         
         generateWeapon(){
             let pistol = game.newImageObject({
-                  file : "/game/assets/pistol.png",  
+                  file : "assets/pistol.png",  
                   x: oPos.x-30, 
                   y: oPos.y, 
                   scale: 0.38,
@@ -23,7 +23,7 @@
             });
 
             let assault = game.newImageObject({
-                  file : "/game/assets/assault.png",  
+                  file : "assets/assault.png",  
                   x: oPos.x-45,
                   y: oPos.y, 
                   scale: 0.35,
@@ -36,7 +36,7 @@
             });
 
             let sniper = game.newImageObject({
-                  file : "/game/assets/sniper.png",  
+                  file : "assets/sniper.png",  
                   x: oPos.x-45,
                   y: oPos.y, 
                   scale: 0.35,
@@ -49,7 +49,7 @@
             });
 
             let gun = game.newImageObject({
-                  file : "/game/assets/gun.png",  
+                  file : "assets/gun.png",  
                   x: oPos.x-45,
                   y: oPos.y+10, 
                   scale: 0.3,
@@ -62,7 +62,7 @@
             });
 
             let plasma = game.newImageObject({
-                  file : "/game/assets/plasma.png",  
+                  file : "assets/plasma.png",  
                   x: oPos.x-30,
                   y: oPos.y, 
                   scale: 0.5,
@@ -84,7 +84,7 @@
         
         generateBox(){
             let box = game.newImageObject({
-                file: "/game/assets/box.png",
+                file: "assets/box.png",
                 x: 450,
                 y: 450,
                 userData: {
@@ -97,7 +97,7 @@
         
         generateMedkit(){
             let kit = game.newImageObject({
-                file: "/game/assets/medkit.png",
+                file: "assets/medkit.png",
                 scale: 0.5,
                 x: 300,
                 y: 300,

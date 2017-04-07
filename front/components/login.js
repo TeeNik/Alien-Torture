@@ -74,7 +74,7 @@
 					<p class="signin button">
 						<input type="submit" value="Sign up" /> </p>
 					<p class="login backbutton">
-						<input type="button" onclick="showInd();" value="Back" /> </p>
+						<input type="button" onclick="router.nav('/');" value="Back" /> </p>
 				</form>
 			</div>
 		</div>

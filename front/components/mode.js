@@ -46,7 +46,7 @@
 
 		</div>
 		<br>
-		<span><input type="button" class="backb" onclick="showInd();" value="Back"></span>
+		<span><input type="button" class="backb" onclick="Router.nav('/');" value="Back"></span>
 			`;
 		}
     }

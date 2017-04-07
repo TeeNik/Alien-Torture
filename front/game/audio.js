@@ -1,7 +1,7 @@
 (function(){
 	class Audio{
 		constructor(){
-			this.main_theme = audio.newAudio("/game/assets/main_theme.mp3");
+			this.main_theme = audio.newAudio("assets/main_theme.mp3");
 		}
 	
 		play(){
