@@ -86,8 +86,8 @@
 			OOP.forArr(map.blocks, function(el){
 				if(this.obj.isIntersect(el) && el.isWall) 
 				{
-					this.obj.drawDynamicBox();
-					el.drawDynamicBox();
+					/*this.obj.drawDynamicBox();
+					el.drawDynamicBox();*/
                     if(this.dx > 0 && this.obj.x < el.x && map.isItWall(this.get2dPosX()+1, this.get2dPosY()))
                     {
                         this.dx = 0;

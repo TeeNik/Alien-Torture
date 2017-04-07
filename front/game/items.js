@@ -5,6 +5,7 @@
             this.numOfWeapon = 5;
             this.boxs = [];
             this.medkits = [];
+            this.racks = [];
         }
         
         generateWeapon(){
@@ -107,6 +108,53 @@
             });
             this.medkits.push(kit);
         }
+		
+		generateRack(){
+			let plasmaRack = game.newImageObject({
+                  file : "assets/plasmaRack.png",  
+                  x: 2036,
+                  y: 2600, 
+                  scale: 0.3,
+				  userData: {
+				  	  life: 1,
+					  weapon: 4
+				  }
+			});
+			this.racks.push(plasmaRack);
+			let assaultRack = game.newImageObject({
+                  file : "assets/assaultRack.png",  
+                  x: 1650,
+                  y: 1580, 
+                  scale: 0.3,
+				  userData: {
+				  	  life: 1,
+					  weapon: 1
+				  }
+			});
+			this.racks.push(assaultRack);
+			let sniperRack = game.newImageObject({
+                  file : "assets/sniperRack.png",  
+                  x: 1960,
+                  y: 1600, 
+                  scale: 0.3,
+				  userData: {
+				  	  life: 1,
+					  weapon: 2
+				  }
+			});
+			this.racks.push(sniperRack);
+			let gunRack = game.newImageObject({
+                  file : "assets/gunRack.png",  
+                  x: 940,
+                  y: 910, 
+                  scale: 0.3,
+				  userData: {
+				  	  life: 1,
+					  weapon: 3
+				  }
+			});
+			this.racks.push(gunRack);
+		}
         
         draw(){
             OOP.forArr(this.boxs, function (el) {
@@ -130,6 +178,18 @@
                     }
                 }
             });
+			OOP.forArr(this.racks, function (el) {
+                if (el.life) {
+                    el.draw();
+                    if (el.isIntersect(player.obj)) {
+						player.wNum = el.weapon;
+						player.weapon = this.weapons[el.weapon];
+                        el.visible = false;
+                        el.life = 0;
+                        el = null;                      
+                    }
+                }
+            }.bind(this));
         };       
     }
     window.Items = Items;
@@ -140,3 +200,4 @@ var items = new Items();
 items.generateWeapon();
 items.generateBox();
 items.generateMedkit();
+items.generateRack();

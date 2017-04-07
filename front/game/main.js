@@ -21,6 +21,8 @@ game.newLoop("l1", function()
 		weapon.fire();
 	}
 	
+	if(key.isPress("C")) console.log(player.obj.x + " " + player.obj.y);
+	
 	weapon.moveWeapon();
 	
 	

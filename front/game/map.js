@@ -40,7 +40,6 @@
         generate2d(){
             let l = this.level;
             while(l.length) this.map2d.push(l.splice(0,26));
-			console.log(this.map2d);
         }
 		
 		draw(){
@@ -48,7 +47,6 @@
 		};
 
         isItWall(x, y){
-            console.log(x + " " + y + " " + this.map2d[y][x]);
             return (this.wallIndex.indexOf(this.map2d[y][x]) != -1);
         }
 	}
