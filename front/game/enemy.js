@@ -9,10 +9,27 @@
 			this.speed = 2;
 			this.weapon = items.weapons[1];
 			this.shotPoint = game.newCircleObject({
+				fillColor: "black",
 				radius: 3
 			});
 			
-			setInterval()
+			setInterval(function(){
+				let self = this;
+				console.log(self);
+				let bull = game.newImageObject({
+					file: "assets/pistolShot.png",
+					x: self.shotPoint.x,
+					y: self.shotPoint.y,
+					scale: 0.35, 
+					angle: self.shotPoint.getAngle(),
+					userData: {
+						life: 1,
+					}
+				});
+				bull.damage = 1;
+				bull.speed = 10;
+				weapon.enemyBulls.push(bull);
+			}.bind(this), 2000);
 		}
 			
 		draw(){
@@ -23,13 +40,11 @@
 			} else {
 				this.obj.visible = false;
 			} 
+			
+			this.shotPoint.draw();			this.shotPoint.setPositionC(this.obj.getPositionC());
 			this.shotPoint.rotate(oPos);
 		}
-		
-		shooting(){
-			
-		}
-		
+	
 		shoot(){
 			let bull = game.newImageObject({
 				file: fileName,
@@ -42,15 +57,15 @@
 				}
 			}.bind(this));
 			bull.damage = 10;
-			bull.speed = sp;
-			this.bulls.push(bull);
+			bull.speed = 1;
+			weapon.enemyBulls.push(bull);
 		}
 		
 		init() {
 			let an = this.anim;
 			this.obj = game.newAnimationObject({
-				x: 300,
-				y: 300,
+				x: 750,
+				y: 980,
 				animation: an,
 				w: 72,
 				h: 97

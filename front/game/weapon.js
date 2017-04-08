@@ -89,6 +89,24 @@
 					el = null;
 				}
 			});
+			OOP.forArr(this.enemyBulls, function (el) {
+				if (el.life) {
+					el.draw();
+					el.moveAngle(el.speed);
+					if (el.isArrIntersect(map.walls)) {
+						el.visible = false;
+						el.life = false;
+					}
+					if (el.isIntersect(player.obj) && el.isVisible() && enemy.obj.isVisible()) {
+						el.visible = false;
+						player.health -= el.damage;
+						el.life = false;
+					}
+				}
+				else {
+					el = null;
+				}
+			});
 		}
 		
 		moveWeapon() {
