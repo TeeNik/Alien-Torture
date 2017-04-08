@@ -2,6 +2,18 @@ var shotPoint = game.newCircleObject({
 	radius: 3
 });
 
+
+var deathAnim =  pjs.tiles.newImage("assets/death.png").getAnimation(0,0,177,177,18);
+	/*var deathObj = game.newAnimationObject({
+		x: 400,
+		y: 400,
+		animation: deathAnim,
+		w: 150,
+		h: 150,
+	});*/
+	
+
+
 game.newLoop("l1", function()
 {
     game.clear();
@@ -10,6 +22,7 @@ game.newLoop("l1", function()
 	map.draw();
 	
     enemy.draw();
+
 
 	if(!pause.pause){
 		player.do();
