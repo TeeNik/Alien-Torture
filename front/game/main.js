@@ -23,7 +23,6 @@ game.newLoop("l1", function()
 	
     enemy.draw();
 
-
 	if(!pause.pause){
 		player.do();
 	
@@ -54,41 +53,40 @@ game.newLoop("l1", function()
 
 game.newLoop("tutorial", function()
 {
-    oPos = obj.getPositionC();
+    game.clear();
+    oPos = player.obj.getPositionC();
 	
-	if(key.isPress("SPACE")){
-		pause = false;
-		tutState++;
-		if( tutState <= 6){
-			setTimeout(function(){
-			pause = true;
-			}, 7000);
-		}		
-	}
-
-	game.clear();
-		
 	map.draw();
+	
+    enemy.draw();
 
-	drawEnemy();
-	if(!pause){	
-		
-		
-		obj.do();
-
+	if(!pause.pause){
+		player.do();
+	
 		camera.moveTimeC(pjs.vector.getPointAngle(point(oPos.x + 150, oPos.y), oPos, shotPoint.getAngle()),20);
-		shotPoint.setPositionC(obj.getPositionC());
+		shotPoint.setPositionC(oPos);
 		shotPoint.rotate(mouse.getPosition());
 	
-		fire();
+		weapon.fire();
 	}
-		
+	
+	if(key.isPress("C")) console.log(player.obj.x + " " + player.obj.y);
+	
+	weapon.moveWeapon();
+	
+	
 	items.draw();
 	
 	timer.drawTimer();
 	
-	if(pause) drawTutorial();
+	specials.checkSpec();
+    
+    gui.draw();
+	
+	if(!tutorialEnd){
+		drawTutorial();
+	}    
 });
 
-game.startLoop("l1");
-//game.startLoop("tutorial");
+//game.startLoop("l1");
+game.startLoop("tutorial");

@@ -63,10 +63,11 @@
 				self.w = 150;
 				self.h = 150;
 				self.setAnimation(deathAnim);
+				self.setDelay(5);
 				self.draw();
 				setTimeout(function(){
 					self.visible = false;
-				}, 1000);				
+				}, 1700);				
 			} 
 			
 			

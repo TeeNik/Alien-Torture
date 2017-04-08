@@ -11,7 +11,6 @@
 			
             let rage = function () {
                 player.speed = 10;
-                this.ableSpec = false;
                 let an = pjs.tiles.newImage("assets/berserk.png").getAnimation(0,0,350,350,5);
                 let flame = game.newAnimationObject({
                     animation: an,
@@ -56,16 +55,20 @@
 
             let healing = function() {
 				player.mana -= this.costs[4];
-                let heal = true;
-                    if(heal){
-                        player.speed = 0;
-                        heal = false;
-                        setTimeout(function(){
-                            player.speed = 7;
-                            player.health++;
-                            heal = true;
-                        },1000);
-                }
+				let an = pjs.tiles.newImage("assets/heal.png").getAnimation(0,0,283,283,14);
+                let heal = game.newAnimationObject({
+                    animation: an,
+                    x: oPos.x,
+                    y: oPos.y,
+                    w: 150,
+                    h: 150, 
+                    delay: 5
+                });
+                player.addSpec = heal;
+                player.addSpec.setPositionC(point(oPos.x,oPos.y)); 
+				setTimeout(function(){
+					player.addSpec = null;
+				}, 1000);
             }.bind(this);
 
             

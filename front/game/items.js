@@ -198,6 +198,6 @@
 
 var items = new Items();
 items.generateWeapon();
-items.generateBox();
+//items.generateBox();
 items.generateMedkit();
 items.generateRack();

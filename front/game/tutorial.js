@@ -1,4 +1,5 @@
 var tutState = 1;
+var tutorialEnd = false;
 
 var t1 = game.newImageObject({
 	file: "assets/t1.png",
@@ -9,6 +10,8 @@ var t1 = game.newImageObject({
 
 
 var drawTutorial = function(){
+	
+	pause.pause = true;
 	
 	brush.drawImageS({
 		file: "assets/t" + tutState + ".png",
@@ -25,13 +28,16 @@ var drawTutorial = function(){
 		color: "black",
 		font: 'pixel'
 	});
+	
+	if(key.isPress("SPACE")){
+		tutState++;
+		if(tutState == 7){
+			tutorialEnd = true;
+			pause = false;
+		}
+		
+	}
 };
-
-var startTutorial = function(){
-	pause = true;
-	drawTutorial();
-	//draw
-}
 
 
 //t1.setPositionS(new point(screen.width/2, screen.height/2));
