@@ -8,13 +8,20 @@
 			this.obj;
 			this.name;
 			this.health = 1;
+			this.mana = 0;
 			this.speed = 7;
 			this.addSpec = null;
 			this.wNum = 0;
 			this.sNum = 0;
 			this.fireCheck = true;
 			this.dx = 0;
-			this.dy = 0;			
+			this.dy = 0;
+			
+			setInterval(function(){
+				if(this.mana < 10) {
+					this.mana++;
+				}
+			}.bind(this), 1000);
 		} 
 		
 		control(){  

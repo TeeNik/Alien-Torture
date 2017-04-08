@@ -35,10 +35,19 @@
             this.sBar = game.newRoundRectObject({
                 x: 10,
                 y: 10,
-                w: player.health * 19.4,
+                w: player.mana * 19.4,
                 h: 35,
                 radius: 5,
                 fillColor: "#8ecdf6",
+            });
+			
+			this.mark = game.newRectObject({
+                x: 10 + specials.costs[player.sNum % specials.numOfSpecs],
+                y: 10,
+                w: 5,
+                h: 35,
+                radius: 5,
+                fillColor: "blue",
             });
         }
         
@@ -74,9 +83,12 @@
 			this.backS.setPositionS(point(30,80));
             this.backS.draw();
 
-            this.sBar.w = player.health * 19.4;
+            this.sBar.w = player.mana * 19.4;
             this.sBar.setPositionS(point(34,84));
             this.sBar.draw();
+			
+            this.mark.setPositionS(point(30 + specials.costs[player.sNum % specials.numOfSpecs]*19.4,84));
+            this.mark.draw();
         }       
     }
     

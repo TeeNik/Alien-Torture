@@ -2,11 +2,13 @@
     class Specials{
         constructor(){
             this.specs = [];
-            this.ableSpec = true;
+			this.costs = [];
 			this.telep;
+			this.numOfSpecs = 5;
         }
         
         generateSpecs(){
+			
             let rage = function () {
                 player.speed = 10;
                 this.ableSpec = false;
@@ -19,43 +21,41 @@
                     h: 150, 
                     delay: 5
                 });
+				player.mana -= this.costs[2];
                 player.addSpec = flame;
                 player.addSpec.setPositionC(point(oPos.x,oPos.y)); 
                 setTimeout(function () {
                     player.speed = 7;
                     this.ableSpec = true;
                     flame.visible = false;
-                    player.addSpec = null;
                 }, 5000);
-            }
+            }.bind(this);
 
             let blastRing = function () {
                 for (let i = 0; i < 12; i++) {
-                            var bull = game.newImageObject({
-                                file: "assets/smviolet.png",
-                                x: oPos.x,
-                                y: oPos.y,
-                                w: 50,
-                                h: 50,
-                                angle: i*30,
-                                userData: {
-                                    life: 1
-                                }
-                            });
-                            bull.speed = 5; 
-                            weapon.bulls.push(bull);
-                        }
-                        this.ableSpec = false;
-                        setTimeout(function () {
-                            this.ableSpec = true;
-                        }, 6000);
-            }
+					var bull = game.newImageObject({
+						file: "assets/smviolet.png",
+						x: oPos.x,
+						y: oPos.y,
+						w: 50,
+						h: 50,
+						angle: i*30,
+						userData: {
+							life: 1
+						}
+					});
+					bull.speed = 5; 
+					weapon.bulls.push(bull);
+                }
+				player.mana -= this.costs[3];
+            }.bind(this);
 
             let shield = function() {
 
             }
 
             let healing = function() {
+				player.mana -= this.costs[4];
                 let heal = true;
                     if(heal){
                         player.speed = 0;
@@ -66,7 +66,7 @@
                             heal = true;
                         },1000);
                 }
-            }
+            }.bind(this);
 
             
             player.teleportSet = false;
@@ -83,21 +83,18 @@
                         fillColor: "violet"
                     });
                     player.teleportSet = true;
+					player.mana -= this.costs[1];
                 }else{
                     player.obj.x = this.telep.x;
                     player.obj.y = this.telep.y;
 
                     OOP.forArr(items.weapons, function(el){
-                        el.setNear()
+                        el.setNear();
                     });
 
                     player.teleportSet = false;
                     this.telep.visible = false;
 					this.telep = null;
-                    this.ableSpec = false;
-                    setTimeout(function () {
-                        this.ableSpec = true;
-                    }.bind(this), 6000);
                 }
             }.bind(this);
 
@@ -118,13 +115,20 @@
                 bull.speed = 7;
                 bull.damage = 5;
                 weapon.bulls.push(bull);
-            }
+				player.mana -= this.costs[0];
+            }.bind(this);
 
             this.specs.push(energyBlast);
             this.specs.push(teleport);
             this.specs.push(rage);
             this.specs.push(blastRing);
             this.specs.push(healing);  
+			
+            this.costs.push(3);  
+            this.costs.push(4);  
+            this.costs.push(5);  
+            this.costs.push(3);  
+            this.costs.push(10);  
         }
 		
 		checkSpec() {
@@ -133,8 +137,8 @@
 			}
 
 			if (mouse.isPress("RIGHT")) {
-				if (this.ableSpec) {
-					this.specs[player.sNum % 5](); 
+				if (this.costs[player.sNum % this.numOfSpecs] <= player.mana) {
+					this.specs[player.sNum % this.numOfSpecs](); 
 				}
 			}
 		}

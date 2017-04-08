@@ -8,6 +8,11 @@
 			this.health = 10;
 			this.speed = 2;
 			this.weapon = items.weapons[1];
+			this.shotPoint = game.newCircleObject({
+				radius: 3
+			});
+			
+			setInterval()
 		}
 			
 		draw(){
@@ -17,7 +22,28 @@
 				GUI.drawHP(this);
 			} else {
 				this.obj.visible = false;
-			}  
+			} 
+			this.shotPoint.rotate(oPos);
+		}
+		
+		shooting(){
+			
+		}
+		
+		shoot(){
+			let bull = game.newImageObject({
+				file: fileName,
+				x: this.obj.x,
+				y: this.obj.y,
+				scale: 0.35, 
+				angle: this.shotPoint.getAngle(),
+				userData: {
+					life: 1
+				}
+			}.bind(this));
+			bull.damage = 10;
+			bull.speed = sp;
+			this.bulls.push(bull);
 		}
 		
 		init() {

@@ -2,6 +2,7 @@
 	class Weapon{
 		constructor(){
 			this.bulls = [];
+			this.enemyBulls = [];
 		}
 		
 		
@@ -47,12 +48,10 @@
 		
 		fire() {
 			if (mouse.isDown("LEFT") && player.fireCheck) {
-				console.log("fire");
 				player.fireCheck = false;
 				
 				switch (player.wNum % 5) {
 				case 0:
-						console.log("pistol");
 					this.pistolShot();
 					break;
 				case 1:
