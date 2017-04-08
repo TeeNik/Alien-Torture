@@ -1,6 +1,8 @@
 (function(){
 	class Enemy{
-		constructor(image){
+		constructor(image, a, b){
+			this.x = a;
+			this.y = b;
 			this.img = pjs.tiles.newImage(image);
 			this.anim = this.img.getAnimation(560,0,70,94,1);
 			this.obj;
@@ -90,16 +92,17 @@
 		}
 		
 		init() {
+			let self = this;
 			let an = this.anim;
 			this.obj = game.newAnimationObject({
-				x: 750,
-				y: 980,
+				x: self.x,
+				y: self.y,
 				animation: an,
 				w: 72,
 				h: 97
 			});
 			
-			let self = this.obj;
+			
 			this.weapon = game.newImageObject({
                   file : "assets/assault.png",  
                   x: self.x-20,
@@ -114,7 +117,15 @@
 	}
 	window.Enemy = Enemy;
 })();
+var enemies = []
 
-var enemy = new Enemy("assets/p6.png");
-enemy.init();
+var enemy1 = new Enemy("assets/p6.png", 2730, 1820);
+enemy1.init();
+var enemy2 = new Enemy("assets/p6.png", 1620, 2200);
+enemy2.init();
+var enemy3 = new Enemy("assets/p6.png", 750, 980);
+enemy3.init();
 
+enemies.push(enemy1);
+enemies.push(enemy2);
+enemies.push(enemy3);

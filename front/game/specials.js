@@ -55,6 +55,7 @@
 
             let healing = function() {
 				player.mana -= this.costs[4];
+				player.health += 5;
 				let an = pjs.tiles.newImage("assets/heal.png").getAnimation(0,0,283,283,14);
                 let heal = game.newAnimationObject({
                     animation: an,
@@ -68,7 +69,7 @@
                 player.addSpec.setPositionC(point(oPos.x,oPos.y)); 
 				setTimeout(function(){
 					player.addSpec = null;
-				}, 1000);
+				}, 1650);
             }.bind(this);
 
             

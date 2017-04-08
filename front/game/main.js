@@ -58,7 +58,9 @@ game.newLoop("tutorial", function()
 	
 	map.draw();
 	
-    enemy.draw();
+    for(let i = 0; i < 3; i++){
+		enemies[i].draw();	
+	}
 
 	if(!pause.pause){
 		player.do();

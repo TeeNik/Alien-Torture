@@ -79,11 +79,14 @@
 						el.visible = false;
 						el.life = false;
 					}
-					if (el.isIntersect(enemy.obj) && el.isVisible() && enemy.obj.isVisible()) {
-						el.visible = false;
-						enemy.health -= el.damage;
-						el.life = false;
-					}
+					OOP.forArr(enemies, function(n){
+						if (el.isIntersect(n.obj) && el.isVisible() && n.obj.isVisible()) {
+							el.visible = false;
+							n.health -= el.damage;
+							el.life = false;
+						}
+					});
+					
 				}
 				else {
 					el = null;
@@ -97,7 +100,7 @@
 						el.visible = false;
 						el.life = false;
 					}
-					if (el.isIntersect(player.obj) && el.isVisible() && enemy.obj.isVisible()) {
+					if (el.isIntersect(player.obj) && el.isVisible()) {
 						el.visible = false;
 						player.health -= el.damage;
 						el.life = false;
