@@ -1,0 +1,13 @@
+div
+    h1(class='h1Title') Break Away
+    div(class='menuBody')
+        if logicAuth
+            p(id='menuStartAuth' class='title stroke')= 'Start'
+        else
+            p(id='menuStartNotAuth' class='title stroke')= 'Start'
+        p(id='menuRating' class='title')= 'Rating'
+        p(id='menuAbout' class='title')= 'About'
+        if logicAuth
+            p(id='menuLogout' class='title')= 'Logout'
+
+

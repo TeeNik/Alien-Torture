@@ -7,7 +7,7 @@
 			this.anim = this.img.getAnimation(560,0,70,94,1);
 			this.obj;
 			this.name;
-			this.health = 1;
+			this.health = 10;
 			this.speed = 2;
 			this.weapon;
 			this.shotPoint = game.newCircleObject({
@@ -20,7 +20,7 @@
 				for(let i = 1; i < 4; i++){
 					setTimeout(function(){
 						let bull = game.newImageObject({
-							file: "assets/pistolShot.png",
+							file: "assets/enemyShot.png",
 							x: self.shotPoint.x,
 							y: self.shotPoint.y,
 							scale: 0.35, 
@@ -125,7 +125,14 @@ var enemy2 = new Enemy("assets/p6.png", 1620, 2200);
 enemy2.init();
 var enemy3 = new Enemy("assets/p6.png", 750, 980);
 enemy3.init();
+var enemy4 = new Enemy("assets/p6.png", 560, 2340);
+enemy4.init();
+var enemy5 = new Enemy("assets/p6.png", 2020, 2890);
+enemy5.init();
+
 
 enemies.push(enemy1);
 enemies.push(enemy2);
 enemies.push(enemy3);
+enemies.push(enemy4);
+enemies.push(enemy5);

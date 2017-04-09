@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 const express = require('express');
 const pug = require('pug');
@@ -16,7 +16,6 @@ app.use('/rating', express.static('front'));
 app.use('/rating', express.static('front/static'));
 app.use('/login', express.static('front'));
 app.use('/login', express.static('front/static'));
-
 
 app.set('views', './front/components');
 app.set('view engine', 'pug');

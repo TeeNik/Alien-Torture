@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/TeeNik/2017_1_RWS/issues"
   },
-  "homepage": "https://github.com/TeeNik/2017_1_RWS#readme"
+  "homepage": "https://github.com/TeeNik/2017_1_RWS#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "pug-cli": "^1.0.0-alpha6",
+    "webpack": "^2.3.3"
+  },
+  "dependencies": {
+    "pug-loader": "^2.3.0"
+  }
 }

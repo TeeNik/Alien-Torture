@@ -1,3 +1,6 @@
+//import Manage  from './services/manage'
+
+//manage = new Manage();
 (function(){
 	class Pause{
 		constructor(){
@@ -21,7 +24,7 @@
 				size: 50,
 				font: "pixel",
 				text: "Exit",
-				color: "black",	
+				color: "black",
 			});
 		}
 		
@@ -36,6 +39,7 @@
 
 			if(mouse.isPeekObject("LEFT", this.exitText)){
 				location.href = "/../index.html";
+				//manage.showInd();
 			}
 
 			if(mouse.isPeekObject("LEFT", this.soundButton)){

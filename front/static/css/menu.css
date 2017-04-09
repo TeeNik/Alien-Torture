@@ -1,0 +1,20 @@
+.menuBody {
+    padding-top: 10%;
+}
+
+.soundButton {
+    width: 5vw;
+    height: 5vw;
+    margin-top: 3vw;
+}
+
+.soundButton:hover {
+    cursor: pointer;
+}
+
+.stroke {
+    color: white;
+    text-shadow: #333 1px 0px, #333 1px 1px, #333 0px 1px, #333 -1px 1px, #333 -1px 0px, #333 -1px -1px,
+    #333 0px -1px, #333 1px -1px, #333 0 0 3px, #333 0 0 3px, #333 0 0 3px, #333 0 0 3px, #333 0 0 3px,
+    #333 0 0 3px, #333 0 0 3px, #333 0 0 3px;
+}

@@ -33,7 +33,7 @@ var drawTutorial = function(){
 		tutState++;
 		if(tutState == 7){
 			tutorialEnd = true;
-			pause = false;
+			pause.pause = false;
 		}
 		
 	}

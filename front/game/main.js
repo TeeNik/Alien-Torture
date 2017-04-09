@@ -58,7 +58,7 @@ game.newLoop("tutorial", function()
 	
 	map.draw();
 	
-    for(let i = 0; i < 3; i++){
+    for(let i = 0; i < 5; i++){
 		enemies[i].draw();	
 	}
 
@@ -87,7 +87,9 @@ game.newLoop("tutorial", function()
 	
 	if(!tutorialEnd){
 		drawTutorial();
-	}    
+	}else{
+        pause.pauseWork();
+    }    
 });
 
 //game.startLoop("l1");

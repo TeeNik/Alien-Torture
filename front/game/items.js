@@ -17,9 +17,10 @@
 				  self: this,
                   userData: {
                       setNear: function(){
-                          self.x = oPos.x-30;
-                          self.y = oPos.y; 
-                      }
+                          console.log(this);
+                          this.x = oPos.x-30;
+                          this.y = oPos.y; 
+                      }.bind(this)
                   }
             });
 

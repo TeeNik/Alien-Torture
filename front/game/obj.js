@@ -134,6 +134,7 @@
 		
 		checkHP() {
 			if(this.health > 10) this.health = 10;
+			if(this.health < 0) this.health = 7;
 		};
 	
 		do() {   

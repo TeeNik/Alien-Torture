@@ -1,56 +1,47 @@
+import About from './static/components/about';
+import Menu from './static/components/menu';
+import Rating from './static/components/rating';
+import renderAbout from './static/renderedTemplates/aboutTemplate'
+import renderMenu from './static/renderedTemplates/menuTemplate'
+import renderRating from './static/renderedTemplates/ratingTemplate'
+//import {playerNames, logicAuth} from './services/siteService'
+import Manage  from './services/manage'
+import {Router} from './services/router'
+
 (function () {
 
-    let indPage = document.querySelector("#ind");   
-    let logPage = document.querySelector("#log");
-    let aboutPage = document.querySelector("#about");
-	let profPage = document.querySelector("#prof");
-	let loadPage = document.querySelector("#load");
-	let modePage = document.querySelector("#mode");
 
-    const SiteService = window.SiteService;
-    const siteService = new SiteService();
 
-    const HTTP = window.HTTP;
-    const http = new HTTP();
+    let manage = new Manage();
+    //let router = new router();
 
-    let menu = new Menu({
+    //let menu = new Menu();
+    manage.sound();
+    manage.showInd();
+    //menu.render(renderMenu({'logicAuth': logicAuth}));
+
+    //let rating = new Rating();
+   // manage.makeRating();
+
+    //let about = new About();
+    //about.render(renderAbout());
+
+    //let loginPage = document.getElementById("log");
+    //this.ratPage = document.getElementById("rat");
+    //this.aboutPage = document.getElementById("about");
+    //let gamePage = document.getElementById("game");
+
+    /*let game = new Game({
         el: document.createElement('div'),
         data: {
-            title: "Break Away",
-            fields: [
-                {
-                    name: "Start",
-                    fun: "startGame()",
-                    stroke: "stroke",
-                },
-                {
-                    name: "Profile",
-                    fun: "showProfile()",
-                    stroke: "",
-                },
-                {
-                    name: "Rating",
-                    fun: "addRating(); router.nav('/rating')",
-                    stroke: "",
-                },
-                {
-                    name: "About",
-                    fun: "router.nav('/about')",
-                    stroke: "",
-                },
-                {
-                    name: "Logout",
-                    fun: "router.nav('/login')",
-                    stroke: "",
-                },
-            ]
+            title: "Game",
         }
-    });
+    });*/
 
-    let login = new Login({
+    /*let login = new Login({
         el: document.createElement('div'),
         data: {
-            title: "Break Away",
+            title: "Game title",
             logfields: [
                 {
                     input: "text",
@@ -92,143 +83,25 @@
                 },
             ],
         }
-    });
+    });*/
 
-    login.on("submit", (event) => {
-        if ( document.getElementById("usernamesignup").value !== "") {
+   /* login.on("submit", (event) => {
+        if (document.getElementById("usernamesignup").value !== "") {
             event.preventDefault();
 
-            siteService.register(document.getElementById("usernamesignup").value, document.getElementById("emailsignup").value,
-                document.getElementById("passwordsignup").value, showInd(), showLogin());
+            manage.userRegister(document.getElementById("usernamesignup").value, document.getElementById("emailsignup").value,
+                document.getElementById("passwordsignup").value, null, null);
 
         } else if (document.getElementById("username").value !== "") {
             event.preventDefault();
 
-            siteService.login(document.getElementById("username").value, document.getElementById("password").value,  showInd(), showLogin());
+            manage.userLogin(document.getElementById("username").value, document.getElementById("password").value, null, null);
 
         }
-    });
+        manage.showInd();
+    });*/
 
-    let about = new About({
-        el: document.createElement('div'),
-        data: {
-            title: "Our Team",
-            fields: [
-                {
-                    prof: "Backend",
-                    name: "Kuchaeva Karina"
-                },
-                {
-                    prof: "Frontend",
-                    name: "Zlobina Svetlana"
-                },
-                {
-                    prof: "Bug Designer",
-                    name: "Bayramukov Yan"
-                },
-				{
-                    prof: "Designer",
-                    name: "Ovchinnikov Maksim"
-                },
-                {
-                    prof: "Producer",
-                    name: "Maschkin Egor"
-                }
-                
-            ]
-        }
-    });
-	
-	let prof = new Profile({
-		el: document.createElement('div'),
-        data: {
-            title: "Profile",
-            fields: [
-                {
-                    class: "",
-					id: "email",
-					type: "email",
-					required: "required",
-					placeholder: "Email",
-					value: ""
-                },
-                {
-                    class: "",
-					id: "password",
-					type: "password",
-					required: "required",
-					placeholder: "Password",
-					value: ""
-                },
-                {
-                    class: "",
-					id: "password",
-					type: "password",
-					required: "required",
-					placeholder: "Confirm Password",
-					value: ""
-                },
-                {
-                    class: "login button",
-					id: "",
-					type: "submit",
-					required: "",
-					placeholder: "",
-					value: "Save"
-                }
-            ]
-        }
-	});
-	
-	let mode = new Mode({
-		el: document.createElement('div'),
-        data: {
-            title: "Select Mode",
-            fields: [
-                {
-                    mode: "Deathmatch",
-					img: "deathMatch.png",
-					desc: "Select a hero and fight agains other players. Kill more than anybody to win.",
-                },
-                {
-                   mode: "Сatch Flag",
-					img: "lagCapture.png",
-					desc: "Catch the flag and bring it to your base to earn a point. Team with 5 points wins.",
-                },
-                {
-                    mode: "Tutorial",
-					img: "tutorial.png",
-					desc: "Learn the controls and test weapon and skills before joining muliplayer.",
-                }
-            ]
-        }
-	});
-	
-	let load = new Load({
-		el: document.createElement('div'),
-        data: {
-            text: "We pick your opponents. Please wait."
-        }
-	})
-	
-    indPage.appendChild(menu.el);   
-    logPage.appendChild(login.el);
-    aboutPage.appendChild(about.el);
-    profPage.appendChild(prof.el);
-	loadPage.appendChild(load.el);
-	modePage.appendChild(mode.el);
+    //loginPage.appendChild(login.el);
+    //gamePage.appendChild(game.el);
+
 })();
-
-
-var addRating = function(){
-	makeRating();
-	let ratPage = document.querySelector("#rat");
-	ratPage.innerHTML = "";
-	let rating = new Rating({
-        el: document.createElement('div'),
-        data: {
-            title: "Rating",
-        }
-    });
-	ratPage.appendChild(rating.el);
-}

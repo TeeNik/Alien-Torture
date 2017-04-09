@@ -1,7 +1,7 @@
 (function(){
 	class Timer{
 		constructor(){
-			this.time = 180;
+			this.time = 600;
 			this.startTime = Date.now();
 			this.interval;
 		}

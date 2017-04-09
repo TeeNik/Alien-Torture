@@ -1,0 +1,31 @@
+div
+    h1(class='h1Title') Break Away
+    div(class='menuBody')
+        a(id='toregister' class='hiddenanchor')
+        a(id='tologin' class='hiddenanchor')
+        div(id='wrapper')
+            div(id='login' class='animate form')
+                form(autocomplete='on')
+                    h4
+                        a(class='to_register registerAnc' href='#tologin') Log in
+                        a(class='to_rigister registerAnc' href='#toregister') Sign up
+                    p
+                        input(id='username' name='username' required='required' type='text' placeholder='Username')
+                    p
+                        input(id='password' name='password' required='required' type='password' placeholder='Password')
+                    p(class='login button')
+                        input(type='submit' value='Login')
+            div(id='register' class='animate form')
+                form(autocomplete='on')
+                    h4
+                        a(class='to_register registerAnc' href='#tologin') Log in
+                        a(class='to_register registerAnc' href='#toregister') Sign up
+                    p
+                        input(id='usernamesignup' name='usernamesignup' required='required' type='text' placeholder='Username')
+                    p
+                        input(id='emailsignup' name='emailsignup' required='required' type='text' placeholder='Email')
+                    p
+                        input(id='passwordsignup' name='passwordsignup' required='required' type='password' placeholder='Password')
+                    p(class='login button')
+                        input(type='submit' value='Sign up')
+

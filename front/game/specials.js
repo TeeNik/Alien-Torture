@@ -74,8 +74,7 @@
 
             
             player.teleportSet = false;
-            let teleport = function(){
-				
+            let teleport = function(){			
                 if(!player.teleportSet){
                     let an = pjs.tiles.newImage("assets/teleportRune.png").getAnimation(0,0,64,64,4);
                     this.telep = game.newAnimationObject({
