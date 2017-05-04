@@ -18,6 +18,7 @@ export default class Manage {
         this.ratPage = document.getElementById("rat");
         this.aboutPage = document.getElementById("about");
         this.modePage = document.getElementById("mode");
+        this.turnPage = document.getElementById("turn");
         this.backButton = document.getElementById("backButton");
         this.siteService = new SiteService();
         this.menu = new Menu();
@@ -25,6 +26,7 @@ export default class Manage {
         this.about = new About();
         this.login = new Login();
         this.gameMode = new Gamemode();
+        this.turn = new Turn();
         this.myAudio = new Audio("game/assets/main_theme.mp3");
         this.myAudio.addEventListener('ended', function () {
             this.currentTime = 0;
@@ -38,12 +40,15 @@ export default class Manage {
         this.loginPage.appendChild(this.login.content);
         this.aboutPage.appendChild(this.about.content);
         this.modePage.appendChild(this.gameMode.content);
+        this.turnPage.appendChild(this.turn.el);
 
+        this.menu.hidden = true;
         this.ratPage.hidden = true;
         this.loginPage.hidden = true;
         this.aboutPage.hidden = true;
         this.modePage.hidden = true;
         this.backButton.hidden = true;
+        //this.turn.hidden = true;
     }
 
 

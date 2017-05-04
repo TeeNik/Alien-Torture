@@ -278,7 +278,7 @@ function renderAbout(locals) {
         pug_interp;
     var pug_debug_filename, pug_debug_line;
     try {
-        var pug_debug_sources = { "front\u002FcomponentTemplates\u002FaboutTemplate.pug": "div\r\n    h1(class='h1Title') Our Team\r\n    div(class='aboutBody')\r\n        - var names = [[\"Kuchaeva Karina\", \"Fullstack\"], [\"Zlobina Svetlana\", \"Fullstack\"], [\"Bayramukov Yan\", \"Bug Designer\"], [\"Ovchinnikov Maksim\", \"Designer\"]];\r\n        each name in names\r\n            h2 #{name[1]}\r\n            h3 #{name[0]}\r\n\r\n\r\n\r\n" };
+        var pug_debug_sources = { "front\u002FcomponentTemplates\u002FaboutTemplate.pug": "div\r\n    h1(class='h1Title') Our Team\r\n    div(class='aboutBody')\r\n        - var names = [[\"Kuchaeva Karina\", \"Fullstack\"], [\"Zlobina Svetlana\", \"Fullstack\"], [\"Ovchinnikov Maksim\", \"Designer\"], [\"Bayramukov Yan\", \"Bug Designer\"], [\"Mashkin Egor\", \"Produser\"], [\"Vasilchenko Semen\", \"Tester\u002FIdol\"]];\r\n        each name in names\r\n            p #{name[0]} - #{name[1]}\r\n\r\n\r\n\r\n" };
         var pug_indent = [];
         ;
         pug_debug_line = 1;
@@ -299,7 +299,7 @@ function renderAbout(locals) {
         ;
         pug_debug_line = 4;
         pug_debug_filename = "front\u002FcomponentTemplates\u002FaboutTemplate.pug";
-        var names = [["Kuchaeva Karina", "Fullstack"], ["Zlobina Svetlana", "Fullstack"], ["Bayramukov Yan", "Bug Designer"], ["Ovchinnikov Maksim", "Designer"]];
+        var names = [["Kuchaeva Karina", "Fullstack"], ["Zlobina Svetlana", "Fullstack"], ["Ovchinnikov Maksim", "Designer"], ["Bayramukov Yan", "Bug Designer"], ["Mashkin Egor", "Produser"], ["Vasilchenko Semen", "Tester/Idol"]];
         ;
         pug_debug_line = 5;
         pug_debug_filename = "front\u002FcomponentTemplates\u002FaboutTemplate.pug";
@@ -313,19 +313,19 @@ function renderAbout(locals) {
                     ;
                     pug_debug_line = 6;
                     pug_debug_filename = "front\u002FcomponentTemplates\u002FaboutTemplate.pug";
-                    pug_html = pug_html + "\n    \u003Ch2\u003E";
+                    pug_html = pug_html + "\n    \u003Cp\u003E";
                     ;
                     pug_debug_line = 6;
                     pug_debug_filename = "front\u002FcomponentTemplates\u002FaboutTemplate.pug";
-                    pug_html = pug_html + pug_escape(null == (pug_interp = name[1]) ? "" : pug_interp) + "\u003C\u002Fh2\u003E";
+                    pug_html = pug_html + pug_escape(null == (pug_interp = name[0]) ? "" : pug_interp);
                     ;
-                    pug_debug_line = 7;
+                    pug_debug_line = 6;
                     pug_debug_filename = "front\u002FcomponentTemplates\u002FaboutTemplate.pug";
-                    pug_html = pug_html + "\n    \u003Ch3\u003E";
+                    pug_html = pug_html + " - ";
                     ;
-                    pug_debug_line = 7;
+                    pug_debug_line = 6;
                     pug_debug_filename = "front\u002FcomponentTemplates\u002FaboutTemplate.pug";
-                    pug_html = pug_html + pug_escape(null == (pug_interp = name[0]) ? "" : pug_interp) + "\u003C\u002Fh3\u003E";
+                    pug_html = pug_html + pug_escape(null == (pug_interp = name[1]) ? "" : pug_interp) + "\u003C\u002Fp\u003E";
                 }
             } else {
                 var $$l = 0;
@@ -335,19 +335,19 @@ function renderAbout(locals) {
                     ;
                     pug_debug_line = 6;
                     pug_debug_filename = "front\u002FcomponentTemplates\u002FaboutTemplate.pug";
-                    pug_html = pug_html + "\n    \u003Ch2\u003E";
+                    pug_html = pug_html + "\n    \u003Cp\u003E";
                     ;
                     pug_debug_line = 6;
                     pug_debug_filename = "front\u002FcomponentTemplates\u002FaboutTemplate.pug";
-                    pug_html = pug_html + pug_escape(null == (pug_interp = name[1]) ? "" : pug_interp) + "\u003C\u002Fh2\u003E";
+                    pug_html = pug_html + pug_escape(null == (pug_interp = name[0]) ? "" : pug_interp);
                     ;
-                    pug_debug_line = 7;
+                    pug_debug_line = 6;
                     pug_debug_filename = "front\u002FcomponentTemplates\u002FaboutTemplate.pug";
-                    pug_html = pug_html + "\n    \u003Ch3\u003E";
+                    pug_html = pug_html + " - ";
                     ;
-                    pug_debug_line = 7;
+                    pug_debug_line = 6;
                     pug_debug_filename = "front\u002FcomponentTemplates\u002FaboutTemplate.pug";
-                    pug_html = pug_html + pug_escape(null == (pug_interp = name[0]) ? "" : pug_interp) + "\u003C\u002Fh3\u003E";
+                    pug_html = pug_html + pug_escape(null == (pug_interp = name[1]) ? "" : pug_interp) + "\u003C\u002Fp\u003E";
                 }
             }
         }).call(this);

@@ -47,7 +47,8 @@
 		};
 		
 		fire() {
-			if (mouse.isDown("LEFT") && player.fireCheck) {
+			console.log(shootJoystick.deltaX());
+			if ((mouse.isDown("LEFT") || (shootJoystick.deltaX() != 0 || shootJoystick.deltaY() != 0)) && player.fireCheck) {
 				player.fireCheck = false;
 				
 				switch (player.wNum % 5) {

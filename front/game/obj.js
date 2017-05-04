@@ -1,8 +1,36 @@
 "use strict";
 
+//console.log("touchscreen is", VirtualJoystick.touchScreenAvailable() ? "available" : "not available");
+
+var moveJoystick	= new VirtualJoystick({
+    container	: document.body,
+    strokeStyle	: 'cyan',
+    limitStickTravel: true,
+    stickRadius	: 120
+});
+moveJoystick.addEventListener('touchStartValidation', function(event){
+    var touch	= event.changedTouches[0];
+    if( touch.pageX > window.innerWidth/2 )	return false;
+    return true
+});
+
+var shootJoystick	= new VirtualJoystick({
+    container	: document.body,
+    strokeStyle	: 'orange',
+    limitStickTravel: true,
+    stickRadius	: 120
+});
+shootJoystick.addEventListener('touchStartValidation', function(event){
+    var touch	= event.changedTouches[0];
+    if( touch.pageX < window.innerWidth/2 )	return false;
+    return true
+});
+
+
+
 (function(){
 	class Person{
-		constructor(image){			
+		constructor(image){
 			this.img = pjs.tiles.newImage(image);
 			this.anim = this.img.getAnimation(0,0,70,94,11);
 			this.obj;
@@ -24,23 +52,24 @@
 			}.bind(this), 1000);
 		} 
 		
-		control(){  
+		control(){
+            //console.log(Math.atan(shootJoystick.deltaY()/shootJoystick.deltaX())*180/Math.PI);
 			this.dx = this.dy = 0;
-			if(key.isDown("A"))
+			if(key.isDown("A") || moveJoystick.left())
 			{
 				this.dx = -this.speed;
 				this.obj.setFlip(1,0);
 			}
-			else if(key.isDown("D"))
+			else if(key.isDown("D") || moveJoystick.right())
 			{
 				this.dx = this.speed;
 				this.obj.setFlip(0,0);
 			}  
-			if(key.isDown("W"))
+			if(key.isDown("W") || moveJoystick.up())
 			{
 				this.dy = -this.speed;
 			}  
-			else if(key.isDown("S"))
+			else if(key.isDown("S") || moveJoystick.down())
 			{
 				this.dy  = this.speed;
 			}
