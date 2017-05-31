@@ -336,13 +336,14 @@ function PointJS(hc, da, ea, xa, vc) {
 		return a
 	};
 	var m = h.document.createElement("canvas");
+	m.classList.add("game-canvas-not");
 	m.crossOrigin = "anonymous";
 	m.width = parseInt(da);
 	m.height = parseInt(ea);
 	m.style.position = "fixed";
 	m.style.left = 0;
 	m.style.top = 0;
-	m.style.zIndex = 1E3;
+	//m.style.zIndex = 1E3;
 	m.id = "PointJS-canvas_0";
 	m.style.backgroundColor = "black";
 	if ("object" == typeof xa)
@@ -1975,8 +1976,7 @@ function PointJS(hc, da, ea, xa, vc) {
 	na.prototype.draw = function () {
 		if (this.visible && this.alpha) {
 			var a = !1;
-			if (this.angle || 1 != this.alpha || this.shadowColor) N(this)
-				, a = !0;
+			if (this.angle || 1 != this.alpha || this.shadowColor) N(this), a = !0;
 			va(e(this.x, this.y), this.radius, this.fillColor, this.strokeColor, this.strokeWidth);
 			if (this.ondraw) this.ondraw();
 			a && L()
@@ -3515,8 +3515,7 @@ function PointJS(hc, da, ea, xa, vc) {
 		if (ha) return n.runEvent("gameBlur"), !1
 	};
 	h.onfocus = function () {
-		if (!ha) return h.document.activeElement.blur()
-			, h.focus(), n.runEvent("gameFocus"), !1
+		if (!ha) return h.document.activeElement.blur(), h.focus(), n.runEvent("gameFocus"), !1
 	};
 	h.onresize = function () {
 		n.runEvent("gameResize");

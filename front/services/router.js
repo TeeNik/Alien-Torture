@@ -1,14 +1,13 @@
-/*import Manage from './manage'
-//import {renderAll} from './../main'
 
-let manage = new Manage();
+let manage = window.manage;
 
-export var Router = {
+var Router = {
     routes: {
         "/": "indexPage",
         "/rating": "ratingPage",
         "/about": "aboutPage",
-        "/login": "loginPage"
+        "/login": "loginPage",
+        "/game":"gamePage"
     },
     init: function (){
         this._routes = [];
@@ -32,22 +31,35 @@ export var Router = {
 
     indexPage: function () {
         history.pushState(null, null, "/");
+        game.clear();
+        game.stop();
+        document.getElementById("PointJS-canvas_0").classList.remove("game-canvas-active");
+        document.getElementById("PointJS-canvas_0").classList.add("game-canvas-not");
+        manage = window.manage;
         manage.showInd();
     },
 
     ratingPage: function () {
         history.pushState(null, null, "/rating");
+        manage = window.manage;
         manage.showRating();
     },
 
     aboutPage: function () {
         history.pushState(null, null, "/about");
+        manage = window.manage;
         manage.showAbout();
     },
 
     loginPage: function () {
         history.pushState(null, null, "/login");
         manage.showLogin();
+    },
+
+    gamePage: function () {
+        history.pushState(null, null, "/game");
+        manage = window.manage;
+        manage.showGame();
     }
 };
 
@@ -61,15 +73,15 @@ window.onpopstate = function(e){
     e.preventDefault();
     var l = getLocation(document.location.href);
     Router.nav(l.pathname);
-}
+};
+
+window.router = Router;
 
 Router.init();
 let str = getLocation(document.location.href).pathname;
 
 
 Router.init();
-alert(str.substring(0, str.length - 1));
-//renderAll();
-Router.nav(str.substring(0, str.length - 1));*/
-
+//alert(str.substring(0, str.length - 1));
+Router.nav(str.substring(0, str.length - 1));
 

@@ -13,9 +13,15 @@ module.exports = {
     //watch: true
 
     module: {
-        loaders: [{
-            test: /\.js$/,
-            loader: 'babel-loader'
-        }]
+        loaders: [
+            {
+                test: /\.js$/,
+                loader: 'babel-loader'
+            },
+            {
+                test: /\.pug$/,
+                loader: 'pug-loader'
+            }
+        ]
     }
-}
+};
